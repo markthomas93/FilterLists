@@ -19352,7 +19352,7 @@
   },
   {
     "id": 1816,
-    "description": "Additional regex list blocking scam and phising Polish sites for Pi-hole. To install it, you can manually add entries to regex.list file or use script from https://raw.githubusercontent.com/PolishFiltersTeam/ScriptsPlayground/master/scripts/RHI_for_Pi-hole.sh (you just need to type url to list as parameter of script). We recommend option no. 2, cuz it's faster and you can also add this script to cron and have automatic updates.",
+    "description": "Additional regex list blocking scam and phising Polish sites for Pi-hole. To install it, you can manually add entries to regex.list file or use Regex Hosts Installer for Pi-hole (more at https://github.com/PolishFiltersTeam/ScriptsPlayground/blob/master/Readme_RHI_for_Pi-hole.md).",
     "emailAddress": "polishjarvis@gmail.com",
     "homeUrl": "https://kadantiscam.netlify.com/",
     "issuesUrl": "https://github.com/PolishFiltersTeam/KADhosts/issues",
@@ -19365,7 +19365,7 @@
   {
     "id": 1817,
     "chatUrl": "https://discord.me/polskiefiltry",
-    "description": "Polish regex list for Pi-hole. To install it, you can manually add entries to regex.list file or use script from https://raw.githubusercontent.com/PolishFiltersTeam/ScriptsPlayground/master/scripts/RHI_for_Pi-hole.sh (you just need to type url to list as parameter of script). We recommend option no. 2, cuz it's faster and you can also add this script to cron and have automatic updates.",
+    "description": "Polish regex list for Pi-hole. To install it, you can manually add entries to regex.list file or use Regex Hosts Installer for Pi-hole (more at https://github.com/PolishFiltersTeam/ScriptsPlayground/blob/master/Readme_RHI_for_Pi-hole.md).",
     "donateUrl": "https://patronite.pl/polskiefiltry",
     "emailAddress": "errors@certyficate.it",
     "homeUrl": "https://www.certyficate.it/",

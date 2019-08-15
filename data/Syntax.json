@@ -123,5 +123,9 @@
   {
     "id": 29,
     "name": "Socks5"
+  },
+  {
+    "id": 30,
+    "name": "GNU Extended Regular Expressions for blocking domains"
   }
 ]

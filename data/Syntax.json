@@ -126,6 +126,7 @@
   },
   {
     "id": 30,
+    "definitionUrl": "https://docs.pi-hole.net/ftldns/regex/tutorial/",
     "name": "GNU Extended Regular Expressions for blocking domains"
   }
 ]

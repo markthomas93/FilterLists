@@ -6,10 +6,9 @@ trigger:
     include:
       [
         "azure-pipelines.web.yaml",
-        "src/FilterLists.Web/*",
-        ".dockerignore",
         "docker-compose.yml",
         "docker-compose.prod.yml",
+        "web/*",
       ]
 
 pr:
@@ -20,10 +19,9 @@ pr:
     include:
       [
         "azure-pipelines.web.yaml",
-        "src/FilterLists.Web/*",
-        ".dockerignore",
         "docker-compose.yml",
         "docker-compose.prod.yml",
+        "web/*",
       ]
 
 pool:
@@ -36,8 +34,8 @@ steps:
       containerRegistry: "collinbarrett2-dockerhub"
       repository: "collinbarrett2/filterlists.web"
       command: "build"
-      Dockerfile: "src/FilterLists.Web/Dockerfile"
-      buildContext: "."
+      Dockerfile: "web/Dockerfile"
+      buildContext: "./web"
       tags: |
         latest
         $(Build.BuildId)

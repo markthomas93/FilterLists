@@ -60,6 +60,22 @@ steps:
       dockerComposeFile: "docker-compose.data.tests.yml"
       dockerComposeCommand: "up -d mariadb"
 
+  - task: UseDotNet@2
+    displayName: "use latest dotnet sdk"
+    inputs:
+      version: 3.x
+
+  - task: CmdLine@2
+    displayName: "install ef dotnet tool"
+    inputs:
+      script: "dotnet tool install -g dotnet-ef"
+
+  - task: CmdLine@2
+    displayName: "test adding migration"
+    inputs:
+      workingDirectory: "server/src"
+      script: "dotnet ef migrations add TestMigration -p FilterLists.Data.Migrations -s FilterLists.Api"
+
   - task: DockerCompose@0
     displayName: "run test-data"
     inputs:

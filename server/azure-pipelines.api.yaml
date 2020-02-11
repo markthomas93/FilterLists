@@ -18,7 +18,6 @@ trigger:
         "docker-compose.prod.yml",
         "docker-compose.data.tests.yml",
         "docker-compose.services.tests.yml",
-        "data/*",
       ]
 
 pr:
@@ -41,7 +40,6 @@ pr:
         "docker-compose.prod.yml",
         "docker-compose.data.tests.yml",
         "docker-compose.services.tests.yml",
-        "data/*",
       ]
 
 pool:

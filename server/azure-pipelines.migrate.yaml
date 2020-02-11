@@ -1,0 +1,96 @@
+trigger: none
+
+pr:
+  autoCancel: true
+  branches:
+    include: [master]
+  paths:
+    include: [server/azure-pipelines.migrate.yaml, data/*]
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: none
+
+  - script: |
+      git clone $(Build.Repository.Uri) .
+      git checkout $(System.PullRequest.SourceBranch)
+    displayName: git checkout source branch
+
+  - task: UseDotNet@2
+    displayName: use latest dotnet sdk
+    inputs:
+      version: 3.x
+
+  - script: dotnet tool install -g dotnet-ef
+    displayName: install ef dotnet tool
+
+  # TODO: remove $(System.PullRequest.PullRequestNumber) migration if it already exists
+
+  - script: dotnet ef migrations add $(System.PullRequest.PullRequestNumber) -p FilterLists.Data.Migrations -s FilterLists.Api
+    displayName: add migration
+    workingDirectory: server/src
+
+  - task: DockerCompose@0
+    displayName: build test-data
+    inputs:
+      dockerComposeFile: docker-compose.data.tests.yml
+      dockerComposeCommand: build api
+    enabled: false
+
+  - task: Docker@2
+    displayName: create volume test-data-results
+    inputs:
+      command: volume
+      arguments: create test-data-results
+    enabled: false
+
+  - task: DockerCompose@0
+    displayName: up test-data db
+    inputs:
+      dockerComposeFile: docker-compose.data.tests.yml
+      dockerComposeCommand: up -d mariadb
+    enabled: false
+
+  - task: DockerCompose@0
+    displayName: run test-data
+    inputs:
+      dockerComposeFile: docker-compose.data.tests.yml
+      dockerComposeCommand: run api
+    enabled: false
+
+  - task: Docker@2
+    displayName: create test results container
+    inputs:
+      command: container
+      arguments: create --name test-data-results -v test-data-results:/results hello-world
+    condition: succeededOrFailed()
+    enabled: false
+
+  - task: Docker@2
+    displayName: copy out test results
+    inputs:
+      command: cp
+      arguments: test-data-results:/results $(System.DefaultWorkingDirectory)
+    condition: succeededOrFailed()
+    enabled: false
+
+  - task: PublishTestResults@2
+    displayName: publish test results
+    inputs:
+      testResultsFormat: VSTest
+      testResultsFiles: "**/*.trx"
+    condition: succeededOrFailed()
+    enabled: false
+
+  # TODO: if git diff only has 2 files changed, don't push
+  - script: |
+      git config user.name $(GitHub UserName)
+      git config user.email $(GitHub Email)
+      git config user.password $(GitHub Personal Access Token)
+      git diff
+      git  add .
+      git commit -m "migrate #$(System.PullRequest.PullRequestNumber)"
+      git push origin $(System.PullRequest.SourceBranch)
+    displayName: git push migration

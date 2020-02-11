@@ -1,0 +1,117 @@
+trigger: none
+
+pr:
+  autoCancel: true
+  branches:
+    include: [master]
+  paths:
+    # TODO: rm yaml trigger
+    include: [server/azure-pipelines.migrate.yaml, data/*]
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: none
+
+  - script: |
+      git clone $(Build.Repository.Uri) .
+      git checkout $(System.PullRequest.SourceBranch)
+    displayName: git checkout source branch
+
+  - task: UseDotNet@2
+    displayName: use latest dotnet sdk
+    inputs:
+      version: 3.x
+
+  - script: dotnet tool install -g dotnet-ef
+    displayName: install ef dotnet tool
+
+  - bash: |
+      MIGLIST=$(dotnet ef migrations list -p FilterLists.Data.Migrations -s FilterLists.Api)
+      echo $MIGLIST
+      if [[ "$MIGLIST" == *$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER ]]
+      then
+        echo "A migration already exists for PR #$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER, removing..."
+        dotnet ef migrations remove -p FilterLists.Data.Migrations -s FilterLists.Api
+      else
+        echo "No migration exists yet for PR #$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER."
+      fi
+    displayName: remove existing PR migration (if exists)
+    workingDirectory: server/src
+
+  - bash: dotnet ef migrations add $SYSTEM_PULLREQUEST_PULLREQUESTNUMBER -p FilterLists.Data.Migrations -s FilterLists.Api
+    displayName: add migration
+    workingDirectory: server/src
+
+  # TODO: remove 'enabled: false' from testing
+
+  - task: DockerCompose@0
+    displayName: build test-data
+    inputs:
+      dockerComposeFile: docker-compose.data.tests.yml
+      dockerComposeCommand: build api
+    enabled: false
+
+  - task: Docker@2
+    displayName: create volume test-data-results
+    inputs:
+      command: volume
+      arguments: create test-data-results
+    enabled: false
+
+  - task: DockerCompose@0
+    displayName: up test-data db
+    inputs:
+      dockerComposeFile: docker-compose.data.tests.yml
+      dockerComposeCommand: up -d mariadb
+    enabled: false
+
+  - task: DockerCompose@0
+    displayName: run test-data
+    inputs:
+      dockerComposeFile: docker-compose.data.tests.yml
+      dockerComposeCommand: run api
+    enabled: false
+
+  - task: Docker@2
+    displayName: create container test-data-results
+    inputs:
+      command: container
+      arguments: create --name test-data-results -v test-data-results:/results hello-world
+    condition: succeededOrFailed()
+    enabled: false
+
+  - task: Docker@2
+    displayName: copy out test-data results
+    inputs:
+      command: cp
+      arguments: test-data-results:/results $(System.DefaultWorkingDirectory)
+    condition: succeededOrFailed()
+    enabled: false
+
+  - task: PublishTestResults@2
+    displayName: publish test results
+    inputs:
+      testResultsFormat: VSTest
+      testResultsFiles: "**/*.trx"
+    condition: succeededOrFailed()
+    enabled: false
+
+  - bash: |
+      DIFF=$(git diff)
+      echo $DIFF
+      if [[ $DIFF == *"3 files changed"* ]]; then
+        echo "The data change created a meaningful migration. Committing and pushing..."
+        git  add .
+        git config --global user.name $GITHUB_USERNAME
+        git config --global user.email $GITHUB_EMAIL
+        git commit -m "migrate PR #$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER"
+        git config --global credential.helper store
+        echo "https://$GITHUB_PERSONAL_ACCESS_TOKEN:x-oauth-basic@github.com" >> ~/.git-credentials
+        git push origin $SYSTEM_PULLREQUEST_SOURCEBRANCH
+      else
+        echo "No data change detected. Abandoning the migration..."
+      fi
+    displayName: git push migration
+    workingDirectory: server/src

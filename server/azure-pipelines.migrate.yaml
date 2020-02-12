@@ -1,0 +1,131 @@
+trigger: none
+
+pr:
+  autoCancel: true
+  branches:
+    include: [master]
+  paths:
+    include: [data/*]
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: none
+
+  - script: |
+      git config --global user.name "$(GitHub.Name)"
+      git config --global user.email "$(GitHub.Email)"
+      git clone $(Build.Repository.Uri) .
+      git checkout $(System.PullRequest.SourceBranch)
+    displayName: checkout source branch
+
+  # TEMP: rm first line
+  - bash: |
+      echo "##vso[task.setvariable variable=aborted]true"
+      LASTMSG=$(git log -n 1 --pretty=format:"%s")
+      echo "Last commit message: $LASTMSG"
+      if [[ "$LASTMSG" == "migrate PR #$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER" ]] ; then
+        echo "Just migrated. Exiting..."
+        echo "##vso[task.setvariable variable=aborted]true"
+      fi
+    displayName: abort if just migrated
+    name: abortIfJustMigrated
+
+  - task: UseDotNet@2
+    displayName: use latest dotnet sdk
+    inputs:
+      version: 3.x
+    condition: ne(variables['abortIfJustMigrated.aborted'], 'true')
+
+  - script: dotnet tool install -g dotnet-ef
+    displayName: install ef dotnet tool
+    condition: ne(variables['abortIfJustMigrated.aborted'], 'true')
+
+  - bash: |
+      MIGLIST=$(dotnet ef migrations list -p FilterLists.Data.Migrations -s FilterLists.Api)
+      echo "$MIGLIST"
+      if [[ "$MIGLIST" == *$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER ]] ; then
+        echo "A migration already exists for PR #$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER, reverting..."
+        REVERTHASH=$(git log --grep="migrate PR #$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER" -n 1 --pretty=format:"%H")
+        git revert --no-edit $REVERTHASH
+      else
+        echo "No migration exists yet for PR #$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER."
+      fi
+    displayName: revert any existing migration for PR
+    workingDirectory: server/src
+    condition: ne(variables['abortIfJustMigrated.aborted'], 'true')
+
+  - script: dotnet ef migrations add $(System.PullRequest.PullRequestNumber) -p FilterLists.Data.Migrations -s FilterLists.Api
+    displayName: add migration
+    workingDirectory: server/src
+    condition: ne(variables['abortIfJustMigrated.aborted'], 'true')
+
+  - bash: |
+      git add .
+      DIFF=$(git diff --cached --numstat | wc -l)
+      echo "$DIFF files changed"
+      if (( $DIFF != 3 )) ; then
+        echo "noop migration. Abandoning..."
+        echo "##vso[task.setvariable variable=aborted]true"
+      fi
+    displayName: abort if noop migration
+    name: abortIfNoopMigration
+    condition: ne(variables['abortIfJustMigrated.aborted'], 'true')
+
+  - task: DockerCompose@0
+    displayName: build test-data
+    inputs:
+      dockerComposeFile: docker-compose.data.tests.yml
+      dockerComposeCommand: build api
+    condition: and(ne(variables['abortIfJustMigrated.aborted'], 'true'), ne(variables['abortIfNoopMigration.aborted'], 'true'))
+
+  - task: Docker@2
+    displayName: create volume test-data-results
+    inputs:
+      command: volume
+      arguments: create test-data-results
+    condition: and(ne(variables['abortIfJustMigrated.aborted'], 'true'), ne(variables['abortIfNoopMigration.aborted'], 'true'))
+
+  - task: DockerCompose@0
+    displayName: up test-data db
+    inputs:
+      dockerComposeFile: docker-compose.data.tests.yml
+      dockerComposeCommand: up -d mariadb
+    condition: and(ne(variables['abortIfJustMigrated.aborted'], 'true'), ne(variables['abortIfNoopMigration.aborted'], 'true'))
+
+  - task: DockerCompose@0
+    displayName: run test-data
+    inputs:
+      dockerComposeFile: docker-compose.data.tests.yml
+      dockerComposeCommand: run api
+    condition: and(ne(variables['abortIfJustMigrated.aborted'], 'true'), ne(variables['abortIfNoopMigration.aborted'], 'true'))
+
+  - task: Docker@2
+    displayName: create container test-data-results
+    inputs:
+      command: container
+      arguments: create --name test-data-results -v test-data-results:/results hello-world
+    condition: and(ne(variables['abortIfJustMigrated.aborted'], 'true'), ne(variables['abortIfNoopMigration.aborted'], 'true'), succeededOrFailed())
+
+  - task: Docker@2
+    displayName: copy out test-data results
+    inputs:
+      command: cp
+      arguments: test-data-results:/results $(System.DefaultWorkingDirectory)
+    condition: and(ne(variables['abortIfJustMigrated.aborted'], 'true'), ne(variables['abortIfNoopMigration.aborted'], 'true'), succeededOrFailed())
+
+  - task: PublishTestResults@2
+    displayName: publish test results
+    inputs:
+      testResultsFormat: VSTest
+      testResultsFiles: "**/*.trx"
+    condition: and(ne(variables['abortIfJustMigrated.aborted'], 'true'), ne(variables['abortIfNoopMigration.aborted'], 'true'), succeededOrFailed())
+
+  - script: |
+      git commit -m "migrate PR #$(System.PullRequest.PullRequestNumber)"
+      git config --global credential.helper store
+      echo "https://$(GitHub.PAT):x-oauth-basic@github.com" >> ~/.git-credentials
+      git push origin $(System.PullRequest.SourceBranch)
+    displayName: git push migration
+    condition: and(ne(variables['abortIfJustMigrated.aborted'], 'true'), ne(variables['abortIfNoopMigration.aborted'], 'true'))

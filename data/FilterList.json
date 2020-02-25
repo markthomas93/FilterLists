@@ -15757,11 +15757,11 @@
     "descriptionSourceUrl": "https://github.com/mtxadmin/ublock/issues",
     "homeUrl": "https://github.com/mtxadmin/ublock/",
     "issuesUrl": "https://github.com/mtxadmin/ublock/issues",
-    "licenseId": 5,
+    "licenseId": 2,
     "name": "Yet another small uBlock filter list",
     "publishedDate": "2018-12-02T17:15:52",
     "syntaxId": 21,
-    "updatedDate": "2019-04-04T13:07:24",
+    "updatedDate": "2020-02-06T13:07:24",
     "viewUrl": "https://raw.githubusercontent.com/mtxadmin/ublock/master/it"
   },
   {
@@ -15884,7 +15884,7 @@
     "descriptionSourceUrl": "https://github.com/mtxadmin/ublock/issues",
     "homeUrl": "https://github.com/mtxadmin/ublock/blob/master/docs/hosts_file_en.md",
     "issuesUrl": "https://github.com/mtxadmin/ublock/issues",
-    "licenseId": 5,
+    "licenseId": 2,
     "name": "Yet another small hosts file",
     "syntaxId": 1,
     "viewUrl": "https://raw.githubusercontent.com/mtxadmin/ublock/master/hosts.txt"

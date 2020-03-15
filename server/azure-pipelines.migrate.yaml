@@ -24,8 +24,7 @@ steps:
       targetType: inline
       script: |
         FORKURI=$(curl -X GET "https://api.github.com/repos/$BUILD_REPOSITORY_NAME/pulls/$SYSTEM_PULLREQUEST_PULLREQUESTNUMBER" | jq -r '.head.repo.clone_url')
-        git clone "$FORKURI" .
-        git checkout "$SYSTEM_PULLREQUEST_SOURCEBRANCH"
+        git clone -b "$SYSTEM_PULLREQUEST_SOURCEBRANCH" --depth 1 "$FORKURI" .
 
   - task: Bash@3
     displayName: abort if just migrated
@@ -91,7 +90,7 @@ steps:
       targetType: inline
       script: |
         git remote add upstream https://github.com/collinbarrett/FilterLists.git
-        git fetch upstream
+        git fetch --depth 1 upstream
         git merge upstream/master
         CONFLICTS=$(git ls-files -u | wc -l)
         if [ "$CONFLICTS" -gt 0 ] ; then

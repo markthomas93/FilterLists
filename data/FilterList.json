@@ -1556,16 +1556,6 @@
     "viewUrl": "https://adblock.dk/block.csv"
   },
   {
-    "id": 148,
-    "description": "I make supplemental filters in Adblock Plus to block garbage on webpages not blocked by other lists. I use many regular expressions, a few domain filters, but no CSS filters.",
-    "descriptionSourceUrl": "https://mrsatterly.com/abp_filters.html",
-    "homeUrl": "https://mrsatterly.com/abp_filters.html",
-    "licenseId": 14,
-    "name": "Satterly's Adblock Plus Filters",
-    "syntaxId": 3,
-    "viewUrl": "https://mrsatterly.com/abp_filters.txt"
-  },
-  {
     "id": 150,
     "description": "Blocks most popular internet statistics counters on sites serving Russia.",
     "forumUrl": "https://forums.lanik.us/viewforum.php?f=102",
@@ -4020,45 +4010,6 @@
     "viewUrl": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list_browser_UBO.txt"
   },
   {
-    "id": 364,
-    "description": "Advertisements and tracking",
-    "descriptionSourceUrl": "https://www.squidblacklist.org/downloads.html",
-    "emailAddress": "webmaster@squidblacklist.org",
-    "homeUrl": "https://www.squidblacklist.org/",
-    "licenseId": 15,
-    "name": "Squid Blacklist Ad Servers and Trackers",
-    "submissionUrl": "https://www.squidblacklist.org/php/url_submission_form.php",
-    "syntaxId": 2,
-    "updatedDate": "2019-04-14T17:23:13",
-    "viewUrl": "https://www.squidblacklist.org/downloads/dg-ads.acl"
-  },
-  {
-    "id": 365,
-    "description": "Official Facebook domains",
-    "descriptionSourceUrl": "https://www.squidblacklist.org/downloads.html",
-    "emailAddress": "webmaster@squidblacklist.org",
-    "homeUrl": "https://www.squidblacklist.org/",
-    "licenseId": 15,
-    "name": "Squid Blacklist Facebook",
-    "submissionUrl": "https://www.squidblacklist.org/php/url_submission_form.php",
-    "syntaxId": 2,
-    "updatedDate": "2019-04-14T17:39:12",
-    "viewUrl": "https://www.squidblacklist.org/downloads/dg-facebook.acl"
-  },
-  {
-    "id": 366,
-    "description": "Malicious, hijacked, ransomware, dangerous websites",
-    "descriptionSourceUrl": "https://www.squidblacklist.org/downloads.html",
-    "emailAddress": "webmaster@squidblacklist.org",
-    "homeUrl": "https://www.squidblacklist.org/",
-    "licenseId": 15,
-    "name": "Squid Blacklist Malicious",
-    "submissionUrl": "https://www.squidblacklist.org/php/url_submission_form.php",
-    "syntaxId": 2,
-    "updatedDate": "2019-04-14T17:55:12",
-    "viewUrl": "https://www.squidblacklist.org/downloads/dg-malicious.acl"
-  },
-  {
     "id": 367,
     "description": "uMatrix ruleset unbreaks all Alexa 100 and more at domain level",
     "descriptionSourceUrl": "https://github.com/uMatrix-Rules/uMatrix-Rules-Domain",
@@ -4172,7 +4123,7 @@
     "publishedDate": "2018-02-17T00:00:00",
     "syntaxId": 4,
     "updatedDate": "2019-04-14T19:02:57",
-    "viewUrl": "https://raw.githubusercontent.com/hl2guide/All-in-One-Customized-Adblock-List/master/deanoman-adblocklist.txt"
+    "viewUrl": "https://raw.githubusercontent.com/hl2guide/All-in-One-Customized-Adblock-List/master/aio.txt"
   },
   {
     "id": 376,
@@ -4249,19 +4200,6 @@
     "syntaxId": 3,
     "updatedDate": "2019-03-25T11:34:09",
     "viewUrl": "https://rickrolldb.com/ricklist.txt"
-  },
-  {
-    "id": 382,
-    "description": "Blocks ads/popups/fake thumbs/fake redirections/spam bookmark buttons and more from porn websites",
-    "descriptionSourceUrl": "https://raw.githubusercontent.com/WowDude/PornList/master/PornList.txt",
-    "homeUrl": "https://github.com/WowDude/PornList",
-    "issuesUrl": "https://github.com/WowDude/PornList/issues",
-    "licenseId": 16,
-    "name": "PornList",
-    "publishedDate": "2018-03-17T00:00:00",
-    "syntaxId": 4,
-    "updatedDate": "2018-10-24T12:39:14",
-    "viewUrl": "https://raw.githubusercontent.com/WowDude/PornList/master/PornList.txt"
   },
   {
     "id": 383,
@@ -4842,19 +4780,6 @@
     "viewUrl": "https://v.firebog.net/hosts/BillStearns.txt"
   },
   {
-    "id": 443,
-    "description": "To block out ads, mostly tracking services, to prevent data from being collected.",
-    "descriptionSourceUrl": "https://www.kowabit.de/blcklst/",
-    "donateUrl": "https://www.kowabit.de/willkommen/finanzierung-von-kowabit/",
-    "homeUrl": "https://www.kowabit.de/blcklst/",
-    "licenseId": 20,
-    "name": "Kowabit - bl*cklist of death",
-    "syntaxId": 2,
-    "updatedDate": "2019-01-27T19:45:10",
-    "viewUrl": "https://blocklist.kowabit.de/list.txt",
-    "viewUrlMirror1": "https://v.firebog.net/hosts/Kowabit.txt"
-  },
-  {
     "id": 444,
     "donateUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HU4EDJZP2S9QA",
     "homeUrl": "https://firebog.net/",
@@ -4944,14 +4869,6 @@
     "syntaxId": 1,
     "updatedDate": "2019-04-02T20:52:40",
     "viewUrl": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/extra.txt"
-  },
-  {
-    "id": 463,
-    "licenseId": 2,
-    "name": "Prigent Malware",
-    "syntaxId": 2,
-    "updatedDate": "2019-04-15T09:58:10",
-    "viewUrl": "https://v.firebog.net/hosts/Prigent-Malware.txt"
   },
   {
     "id": 465,
@@ -6573,18 +6490,6 @@
     "viewUrl": "http://www.quero.at/download/adblock-hosts.zip"
   },
   {
-    "id": 688,
-    "emailAddress": "rbrito@ime.usp.br",
-    "homeUrl": "https://github.com/rbrito/easylist-ptbr",
-    "issuesUrl": "https://github.com/rbrito/easylist-ptbr/issues",
-    "licenseId": 16,
-    "name": "EasyList PTBR",
-    "publishedDate": "2011-08-12T01:47:30",
-    "syntaxId": 3,
-    "updatedDate": "2015-11-03T20:57:29",
-    "viewUrl": "https://raw.githubusercontent.com/rbrito/easylist-ptbr/master/adblock-rules.txt"
-  },
-  {
     "id": 689,
     "homeUrl": "https://github.com/xxcriticxx/.pl-host-file",
     "issuesUrl": "https://github.com/xxcriticxx/.pl-host-file/issues",
@@ -7113,19 +7018,6 @@
     "syntaxId": 4,
     "updatedDate": "2019-03-11T14:38:09",
     "viewUrl": "https://raw.githubusercontent.com/Hunter-Github/the-best-stack-overflow/master/se_filters.txt"
-  },
-  {
-    "id": 745,
-    "description": "Korean Media Comment, SNS Share Count, Likes Count, News Reaction Filter",
-    "descriptionSourceUrl": "https://raw.githubusercontent.com/KMCF/Korean-Media-Comment/master/filter.txt",
-    "homeUrl": "https://github.com/KMCF/Korean-Media-Comment",
-    "issuesUrl": "https://github.com/KMCF/Korean-Media-Comment/issues",
-    "licenseId": 24,
-    "name": "Korean Media Comment",
-    "publishedDate": "2018-05-23T04:50:04",
-    "syntaxId": 3,
-    "updatedDate": "2018-05-23T04:50:04",
-    "viewUrl": "https://raw.githubusercontent.com/KMCF/Korean-Media-Comment/master/filter.txt"
   },
   {
     "id": 746,
@@ -8418,15 +8310,13 @@
   },
   {
     "id": 861,
-    "description": "Yet another anti-bullshit filter list.",
+    "description": "A black list of malicious domains and trackers.",
     "descriptionSourceUrl": "https://github.com/bogachenko/filterlist",
     "emailAddress": "bogachenkove@gmail.com",
     "homeUrl": "https://github.com/bogachenko/filterlist",
-    "licenseId": 11,
+    "licenseId": 2,
     "name": "bogachenko's Filter List",
-    "publishedDate": "2018-10-01T13:53:10",
     "syntaxId": 4,
-    "updatedDate": "2019-04-14T08:53:51",
     "viewUrl": "https://raw.githubusercontent.com/bogachenko/filterlist/master/filterlist.txt"
   },
   {
@@ -10462,17 +10352,6 @@
     "viewUrl": "https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/CountryCodesLists/Rwanda.txt"
   },
   {
-    "id": 1046,
-    "homeUrl": "https://github.com/deathbybandaid/piholeparser",
-    "issuesUrl": "https://github.com/deathbybandaid/piholeparser/issues",
-    "licenseId": 14,
-    "name": "Pi-hole Parser - Réunion Island",
-    "publishedDate": "2017-08-25T02:08:54",
-    "syntaxId": 2,
-    "updatedDate": "2019-03-12T00:41:09",
-    "viewUrl": "https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/CountryCodesLists/RéunionIsland.txt"
-  },
-  {
     "id": 1047,
     "homeUrl": "https://github.com/deathbybandaid/piholeparser",
     "issuesUrl": "https://github.com/deathbybandaid/piholeparser/issues",
@@ -12244,19 +12123,6 @@
     "viewUrl": "https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/uBlockFiltersPlus.txt"
   },
   {
-    "id": 1231,
-    "description": "Block ads in apps on iOS and Android",
-    "descriptionSourceUrl": "https://github.com/Akamaru/Pi-Hole-Lists/blob/master/README.md",
-    "homeUrl": "https://github.com/Akamaru/Pi-Hole-Lists",
-    "issuesUrl": "https://github.com/Akamaru/Pi-Hole-Lists/issues",
-    "licenseId": 5,
-    "name": "Pi-Hole-Lists - App ads",
-    "publishedDate": "2017-07-31T18:43:55",
-    "syntaxId": 2,
-    "updatedDate": "2019-03-06T20:04:52",
-    "viewUrl": "https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/appads.txt"
-  },
-  {
     "id": 1233,
     "description": "To block Adobe Updates (Photoshop & co.)",
     "descriptionSourceUrl": "https://github.com/Akamaru/Pi-Hole-Lists/blob/master/README.md",
@@ -12608,7 +12474,7 @@
     "homeUrl": "https://github.com/DandelionSprout/adfilt",
     "issuesUrl": "https://github.com/DandelionSprout/adfilt/issues",
     "licenseId": 35,
-    "name": "Anti-'Fake notification counters' List",
+    "name": "Anti-'Unnecessary notification counters' List",
     "publishedDate": "2018-01-10T00:00:00",
     "syntaxId": 3,
     "updatedDate": "2019-03-03T03:39:10",
@@ -14684,18 +14550,6 @@
     "viewUrlMirror2": "https://gitlab.com/DandelionSprout/adfilt/raw/master/AntiAmazonListForTwitch.txt"
   },
   {
-    "id": 1462,
-    "description": "Blocks web workers (including mining scripts) everywhere by default and allows them only when needed.",
-    "homeUrl": "https://github.com/adranger/web-workers-whitelist/",
-    "issuesUrl": "https://github.com/adranger/web-workers-whitelist/issues",
-    "licenseId": 28,
-    "name": "Web Workers Whitelist",
-    "publishedDate": "2018-12-06T14:45:35",
-    "syntaxId": 3,
-    "updatedDate": "2019-03-27T01:16:19",
-    "viewUrl": "https://raw.githubusercontent.com/adranger/web-workers-whitelist/master/web-workers-whitelist.txt"
-  },
-  {
     "id": 1463,
     "description": "Personal hosts list for Samsung Knox-based ad blockers.",
     "homeUrl": "https://github.com/CitizenXVIL/Hosts",
@@ -14790,17 +14644,6 @@
     "name": "AdHell Standard",
     "syntaxId": 1,
     "viewUrl": "https://getadhell.com/standard-package.txt"
-  },
-  {
-    "id": 1472,
-    "homeUrl": "https://github.com/ookangzheng/blahdns/tree/master/hosts",
-    "issuesUrl": "https://github.com/ookangzheng/blahdns/issues",
-    "licenseId": 2,
-    "name": "Blah DNS Content farm host",
-    "publishedDate": "2017-08-15T08:49:00",
-    "syntaxId": 2,
-    "updatedDate": "2019-02-17T10:31:19",
-    "viewUrl": "https://raw.githubusercontent.com/ookangzheng/blahdns/master/hosts/contentfarms.host"
   },
   {
     "id": 1473,
@@ -16763,26 +16606,6 @@
     "viewUrl": "https://raw.githubusercontent.com/david1davidson/uMatrixMasterList/master/ruleset.txt"
   },
   {
-    "id": 1654,
-    "homeUrl": "https://github.com/TechGeeksIO/umatrix-recipes",
-    "issuesUrl": "https://github.com/TechGeeksIO/umatrix-recipes/issues",
-    "licenseId": 34,
-    "name": "TechGeeks.io uMatrix Recipes - starting",
-    "syntaxId": 7,
-    "updatedDate": "2019-06-01T00:00:00",
-    "viewUrl": "https://raw.githubusercontent.com/TechGeeksIO/umatrix-recipes/master/main-ruleset.txt"
-  },
-  {
-    "id": 1655,
-    "homeUrl": "https://github.com/TechGeeksIO/umatrix-recipes",
-    "issuesUrl": "https://github.com/TechGeeksIO/umatrix-recipes/issues",
-    "licenseId": 34,
-    "name": "TechGeeks.io uMatrix Recipes - additional rules",
-    "syntaxId": 7,
-    "updatedDate": "2019-06-01T00:00:00",
-    "viewUrl": "https://raw.githubusercontent.com/TechGeeksIO/umatrix-recipes/master/catalog.txt"
-  },
-  {
     "id": 1656,
     "homeUrl": "https://github.com/invasy/umatrix-ruleset",
     "issuesUrl": "https://github.com/invasy/umatrix-ruleset/issues",
@@ -17244,19 +17067,6 @@
     "syntaxId": 1,
     "viewUrl": "https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/products.txt",
     "viewUrlMirror2": "https://framagit.org/PoorPocketsMcNewHold/no-google/raw/master/categories/products.txt"
-  },
-  {
-    "id": 1695,
-    "description": "Completely block Google proxies.",
-    "descriptionSourceUrl": "https://github.com/nickspaargaren/no-google",
-    "emailAddress": "poorpocketsmcnewhold@pm.me",
-    "homeUrl": "https://github.com/nickspaargaren/no-google",
-    "issuesUrl": "https://github.com/nickspaargaren/no-google/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc",
-    "licenseId": 11,
-    "name": "No Google | Google proxies (Domains)",
-    "syntaxId": 2,
-    "viewUrl": "https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/proxiessparsed",
-    "viewUrlMirror2": "https://framagit.org/PoorPocketsMcNewHold/no-google/raw/master/categories/proxiesparsed"
   },
   {
     "id": 1696,
@@ -18773,14 +18583,6 @@
     "viewUrl": "https://www.binarydefense.com/banlist.txt"
   },
   {
-    "id": 1812,
-    "homeUrl": "https://www.nothink.org/",
-    "licenseId": 5,
-    "name": "NoThink SSH Blacklist",
-    "syntaxId": 9,
-    "viewUrl": "https://www.nothink.org/blacklist/blacklist_ssh_all.txt"
-  },
-  {
     "id": 1813,
     "description": "CINS Army is a way for our company to give back to the community by sharing valuable threat intelligence harvested from our CINS system. The CINS Army list is a subset of the CINS Active Threat Intelligence ruleset, and consists of IP addresses that meet one of two basic criteria: 1) The IP's recent Rogue Packet score factor is very poor, or 2) The IP has tripped a designated number of 'trusted' alerts across a given number of our Sentinels deployed around the world.",
     "homeUrl": "https://cinsscore.com/",
@@ -18898,14 +18700,6 @@
     "name": "hpHosts PHA (IPs)",
     "syntaxId": 9,
     "viewUrl": "https://iplists.firehol.org/files/hphosts_pha.ipset"
-  },
-  {
-    "id": 1826,
-    "description": "Sites engaged in browser hijacking or other forms of hijacking (OS services, bandwidth, DNS, etc.).",
-    "licenseId": 5,
-    "name": "hpHosts HJK (IPs)",
-    "syntaxId": 9,
-    "viewUrl": "https://iplists.firehol.org/files/hphosts_HJK.ipset"
   },
   {
     "id": 1827,
@@ -19176,15 +18970,6 @@
     "viewUrl": "https://raw.githubusercontent.com/masterinspire/Master-AdRules/master/Master-AdRules.txt"
   },
   {
-    "id": 1855,
-    "description": "AdBlock filter",
-    "homeUrl": "https://github.com/likelion-adblock/filter/",
-    "licenseId": 5,
-    "name": "LionBlock",
-    "syntaxId": 6,
-    "viewUrl": "https://raw.githubusercontent.com/likelion-adblock/filter/master/filter.txt"
-  },
-  {
     "id": 1856,
     "description": "This is an Adblock Plus filter list that removes all comment sections from homepages.",
     "homeUrl": "https://github.com/lutoma/nocomments",
@@ -19449,36 +19234,6 @@
     "viewUrl": "https://raw.githubusercontent.com/blocktastic/pihole/master/blocktastic.txt"
   },
   {
-    "id": 1883,
-    "description": "Ad filter list by Broer ICT",
-    "homeUrl": "https://github.com/broerict/blacklists",
-    "issuesUrl": "https://github.com/broerict/blacklists/issues",
-    "licenseId": 4,
-    "name": "Broer ICT Blacklist Ads",
-    "syntaxId": 2,
-    "viewUrl": "https://raw.githubusercontent.com/broerict/blacklists/master/ads"
-  },
-  {
-    "id": 1884,
-    "description": "Malware filter list by Broer ICT",
-    "homeUrl": "https://github.com/broerict/blacklists",
-    "issuesUrl": "https://github.com/broerict/blacklists/issues",
-    "licenseId": 4,
-    "name": "Broer ICT Blacklist Malware",
-    "syntaxId": 2,
-    "viewUrl": "https://raw.githubusercontent.com/broerict/blacklists/master/malware"
-  },
-  {
-    "id": 1885,
-    "description": "Phishing filter list by Broer ICT",
-    "homeUrl": "https://github.com/broerict/blacklists",
-    "issuesUrl": "https://github.com/broerict/blacklists/issues",
-    "licenseId": 4,
-    "name": "Broer ICT Blacklist Phishing",
-    "syntaxId": 2,
-    "viewUrl": "https://raw.githubusercontent.com/broerict/blacklists/master/phishing"
-  },
-  {
     "id": 1886,
     "description": "This is a Pi-hole list to block unwanted domains that serve ads on Macedonian websites.",
     "homeUrl": "https://github.com/cchevy/macedonian-pi-hole-blocklist",
@@ -19653,16 +19408,6 @@
     "name": "Adguard Personal List",
     "syntaxId": 2,
     "viewUrl": "https://raw.githubusercontent.com/Phentora/AdguardPersonalList/master/blocklist.txt"
-  },
-  {
-    "id": 1905,
-    "description": "Hi, this is a list of ad, tracking and other shit sources on the Internet. The original intention was to use this list with Pi-hole in LXC container on the Turris Omnia router for Czech users.",
-    "homeUrl": "https://github.com/qxstyles/turris-hole-czech-block-list",
-    "issuesUrl": "https://github.com/qxstyles/turris-hole-czech-block-list/issues",
-    "licenseId": 5,
-    "name": "Turris Hole Block List",
-    "syntaxId": 2,
-    "viewUrl": "https://raw.githubusercontent.com/qxstyles/turris-hole-czech-block-list/master/turris-hole-czech-block-list"
   },
   {
     "id": 1906,
@@ -20640,16 +20385,6 @@
     "name": "Cybo's Anti Location Tracking",
     "syntaxId": 1,
     "viewUrl": "https://raw.githubusercontent.com/Cybo1927/Hosts/master/Anti/Anti%20Location%20Tracking"
-  },
-  {
-    "id": 1999,
-    "description": "This is used to block all .g00. and .g01. crap that domains like msn.com and sportingnews.com use to obfuscate loaded/loading resources",
-    "homeUrl": "https://github.com/Cybo1927/Hosts",
-    "issuesUrl": "https://github.com/Cybo1927/Hosts/issues",
-    "licenseId": 11,
-    "name": "Cybo's Blackout",
-    "syntaxId": 3,
-    "viewUrl": "https://raw.githubusercontent.com/Cybo1927/Hosts/master/Dark%20Mode/Blackout"
   },
   {
     "id": 2000,
@@ -21642,7 +21377,7 @@
     "homeUrl": "https://gitee.com/anye1998/Adguard-List-of-personal-rules",
     "name": "anye1998's List of Personal Rules",
     "syntaxId": 6,
-    "viewUrl": "https://gitee.com/anye1998/Adguard-List-of-personal-rules/blob/master/List-of-personal-rules.txt"
+    "viewUrl": "https://gitee.com/anye1998/Adguard-List-of-personal-rules/raw/master/List-of-personal-rules.txt"
   },
   {
     "id": 2111,

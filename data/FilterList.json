@@ -19049,9 +19049,9 @@
     "name": "urlhaus-filter (Domains)",
     "syntaxId": 2,
     "updatedDate": "2019-10-01T00:00:00",
-    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts.txt",
-    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts.txt",
-    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts.txt"
+    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-domains.txt",
+    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-domains.txt",
+    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-domains.txt"
   },
   {
     "id": 1880,
@@ -19063,9 +19063,9 @@
     "name": "urlhaus-filter (Online Domains)",
     "syntaxId": 2,
     "updatedDate": "2019-10-01T00:00:00",
-    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts-online.txt",
-    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-online.txt",
-    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-online.txt"
+    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-domains-online.txt",
+    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-domains-online.txt",
+    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-domains-online.txt"
   },
   {
     "id": 1881,
@@ -21757,19 +21757,19 @@
     "viewUrl": "https://raw.githubusercontent.com/hg1978/AdGuard-Home-Whitelist/master/whitelist.txt"
   },
   {
-  "id": 2162,
-"description": "List containing fake local journals from a state-backed disinformation operation.",
-"descriptionSourceUrl": "https://github.com/MassMove/AttackVectors/",
-"homeUrl": "https://github.com/MassMove/AttackVectors/",
-"issuesUrl": "https://github.com/MassMove/AttackVectors/issues",
-"submissionUrl": "https://github.com/MassMove/AttackVectors/issues/new",
-"licenseId": 2,
-"name": "Fake-Local-Journals-List",
-"publishedDate": "2020-04-02T00:00:00",
-"syntaxId": 2,
-"viewUrl": "https://raw.githubusercontent.com/MassMove/AttackVectors/master/LocalJournals/fake-local-journals-list.txt"
-},
-{
+    "id": 2162,
+    "description": "List containing fake local journals from a state-backed disinformation operation.",
+    "descriptionSourceUrl": "https://github.com/MassMove/AttackVectors/",
+    "homeUrl": "https://github.com/MassMove/AttackVectors/",
+    "issuesUrl": "https://github.com/MassMove/AttackVectors/issues",
+    "submissionUrl": "https://github.com/MassMove/AttackVectors/issues/new",
+    "licenseId": 2,
+    "name": "Fake-Local-Journals-List",
+    "publishedDate": "2020-04-02T00:00:00",
+    "syntaxId": 2,
+    "viewUrl": "https://raw.githubusercontent.com/MassMove/AttackVectors/master/LocalJournals/fake-local-journals-list.txt"
+  },
+  {
     "id": 2163,
     "description": "There's simply too many Undertale and Deltarune songs, remixes, and mashups on SoundCloud. Sometimes a list doesn't really need any more reasons to exist than that.",
     "donateUrl": "https://sproutsluckycorner.wordpress.com/2017/11/14/my-work-and-contact-resume/#donations",
@@ -21808,5 +21808,83 @@
     "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-dnsmasq-online.conf",
     "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-dnsmasq-online.conf",
     "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-dnsmasq-online.conf"
+  },
+  {
+    "id": 2166,
+    "description": "A blocklist of malicious URLs that are being used for malware distribution.",
+    "descriptionSourceUrl": "https://gitlab.com/curben/urlhaus-filter/blob/master/README.md",
+    "homeUrl": "https://gitlab.com/curben/urlhaus-filter",
+    "issuesUrl": "https://gitlab.com/curben/urlhaus-filter/issues",
+    "licenseId": 28,
+    "name": "urlhaus-filter (hosts)",
+    "syntaxId": 1,
+    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts.txt",
+    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts.txt",
+    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts.txt"
+  },
+  {
+    "id": 2167,
+    "description": "A blocklist of malicious URLs that are being used for malware distribution.",
+    "descriptionSourceUrl": "https://gitlab.com/curben/urlhaus-filter/blob/master/README.md",
+    "homeUrl": "https://gitlab.com/curben/urlhaus-filter",
+    "issuesUrl": "https://gitlab.com/curben/urlhaus-filter/issues",
+    "licenseId": 28,
+    "name": "urlhaus-filter (Online hosts)",
+    "syntaxId": 1,
+    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts-online.txt",
+    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts-online.txt",
+    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-hosts-online.txt"
+  },
+  {
+    "id": 2168,
+    "description": "A blocklist of malicious URLs that are being used for malware distribution.",
+    "descriptionSourceUrl": "https://gitlab.com/curben/urlhaus-filter/blob/master/README.md",
+    "homeUrl": "https://gitlab.com/curben/urlhaus-filter",
+    "issuesUrl": "https://gitlab.com/curben/urlhaus-filter/issues",
+    "licenseId": 28,
+    "name": "urlhaus-filter (BIND)",
+    "syntaxId": 26,
+    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-bind.conf",
+    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-bind.conf",
+    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-bind.conf"
+  },
+  {
+    "id": 2169,
+    "description": "A blocklist of malicious URLs that are being used for malware distribution.",
+    "descriptionSourceUrl": "https://gitlab.com/curben/urlhaus-filter/blob/master/README.md",
+    "homeUrl": "https://gitlab.com/curben/urlhaus-filter",
+    "issuesUrl": "https://gitlab.com/curben/urlhaus-filter/issues",
+    "licenseId": 28,
+    "name": "urlhaus-filter (Online Domains - BIND)",
+    "syntaxId": 26,
+    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-bind-online.conf",
+    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-bind-online.conf",
+    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-bind-online.conf"
+  },
+  {
+    "id": 2170,
+    "description": "A blocklist of malicious URLs that are being used for malware distribution.",
+    "descriptionSourceUrl": "https://gitlab.com/curben/urlhaus-filter/blob/master/README.md",
+    "homeUrl": "https://gitlab.com/curben/urlhaus-filter",
+    "issuesUrl": "https://gitlab.com/curben/urlhaus-filter/issues",
+    "licenseId": 28,
+    "name": "urlhaus-filter (Unbound)",
+    "syntaxId": 24,
+    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-unbound.conf",
+    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-unbound.conf",
+    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-unbound.conf"
+  },
+  {
+    "id": 2171,
+    "description": "A blocklist of malicious URLs that are being used for malware distribution.",
+    "descriptionSourceUrl": "https://gitlab.com/curben/urlhaus-filter/blob/master/README.md",
+    "homeUrl": "https://gitlab.com/curben/urlhaus-filter",
+    "issuesUrl": "https://gitlab.com/curben/urlhaus-filter/issues",
+    "licenseId": 28,
+    "name": "urlhaus-filter (Online Domains - Unbound)",
+    "syntaxId": 24,
+    "viewUrl": "https://gitlab.com/curben/urlhaus-filter/raw/master/urlhaus-filter-unbound-online.conf",
+    "viewUrlMirror1": "https://cdn.statically.io/gl/curben/urlhaus-filter/raw/master/urlhaus-filter-unbound-online.conf",
+    "viewUrlMirror2": "https://glcdn.githack.com/curben/urlhaus-filter/raw/master/urlhaus-filter-unbound-online.conf"
   }
 ]

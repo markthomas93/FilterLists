@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace FilterLists.Api.Migrations
+namespace FilterLists.Infrastructure.Migrations
 {
     [DbContext(typeof(FilterListsDbContext))]
     [Migration("20200217134345_1376")]

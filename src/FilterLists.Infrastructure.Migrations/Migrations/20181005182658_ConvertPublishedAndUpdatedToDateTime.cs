@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FilterLists.Api.Migrations
+namespace FilterLists.Infrastructure.Migrations
 {
     public partial class ConvertPublishedAndUpdatedToDateTime : Migration
     {

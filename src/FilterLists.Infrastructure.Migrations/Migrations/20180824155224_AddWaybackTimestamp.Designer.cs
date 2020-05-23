@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FilterLists.Api.Migrations
+namespace FilterLists.Infrastructure.Migrations
 {
     [DbContext(typeof(FilterListsDbContext))]
     [Migration("20180824155224_AddWaybackTimestamp")]

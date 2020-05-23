@@ -17,10 +17,10 @@ namespace FilterLists.Api
 
         public IConfiguration Configuration { get; }
 
-        public static void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplication();
-            services.AddInfrastructure();
+            services.AddInfrastructure(Configuration);
             services.AddControllers();
         }
 

@@ -1,0 +1,64 @@
+version: "3.7"
+
+services:
+  nginx:
+    image: nginx:alpine
+    restart: always
+    networks:
+      - reverse-proxy
+    depends_on:
+      - web
+      - api
+    volumes:
+      - ./ops/nginx/svr-includes:/etc/nginx/svr-includes:ro
+
+  web:
+    image: collinbarrett2/filterlists.web:latest
+    restart: always
+    build:
+      context: ./web
+      target: final
+    networks:
+      - reverse-proxy
+
+  api:
+    image: collinbarrett2/filterlists.api:latest
+    restart: always
+    build:
+      context: ./svr
+      dockerfile: src/FilterLists.Api/Dockerfile
+      target: final
+    networks:
+      - reverse-proxy
+      - api
+    depends_on:
+      - db
+    environment:
+      ConnectionStrings__FilterListsConnection: ${API_CONNECTION_STRING}
+
+  db:
+    # on update, also update ServerVersion in FilterLists.Infrastructure.ServiceRegistration
+    image: mariadb:10.4.13
+    restart: always
+    networks:
+      - api
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${API_MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${API_MYSQL_DATABASE}
+      MYSQL_USER: ${API_MYSQL_USER}
+      MYSQL_PASSWORD: ${API_MYSQL_PASSWORD}
+    command:
+      [
+        "mysqld",
+        "--character-set-server=utf8mb4",
+        "--collation-server=utf8mb4_unicode_520_ci",
+      ]
+
+networks:
+  reverse-proxy:
+  api:
+
+volumes:
+  data:

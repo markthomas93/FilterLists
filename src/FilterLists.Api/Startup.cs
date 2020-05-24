@@ -1,6 +1,9 @@
+using FilterLists.Api.GraphQL;
 using FilterLists.Application;
 using FilterLists.Infrastructure;
+using GraphQL.Server;
 using GraphQL.Server.Ui.Playground;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,12 +21,15 @@ namespace FilterLists.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplication();
             services.AddInfrastructure(Configuration);
+            services.AddApplication();
+            services.AddSingleton<ISchema, FilterListSchema>();
+            services.AddGraphQL().AddGraphTypes(ServiceLifetime.Scoped);
         }
 
         public static void Configure(IApplicationBuilder app)
         {
+            app.UseGraphQL<FilterListSchema>();
             app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
         }
     }

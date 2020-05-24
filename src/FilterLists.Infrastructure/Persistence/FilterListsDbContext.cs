@@ -1,4 +1,5 @@
-﻿using FilterLists.Domain.Entities;
+﻿using System;
+using FilterLists.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilterLists.Infrastructure.Persistence
@@ -26,6 +27,7 @@ namespace FilterLists.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            _ = modelBuilder ?? throw new ArgumentNullException(nameof(modelBuilder));
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(FilterListsDbContext).Assembly);
         }
     }

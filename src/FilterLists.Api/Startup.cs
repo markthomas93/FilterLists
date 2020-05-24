@@ -1,10 +1,9 @@
 using FilterLists.Application;
 using FilterLists.Infrastructure;
+using GraphQL.Server.Ui.Playground;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace FilterLists.Api
 {
@@ -21,14 +20,11 @@ namespace FilterLists.Api
         {
             services.AddApplication();
             services.AddInfrastructure(Configuration);
-            services.AddControllers();
         }
 
-        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public static void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
-            app.UseRouting();
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
+            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
         }
     }
 }

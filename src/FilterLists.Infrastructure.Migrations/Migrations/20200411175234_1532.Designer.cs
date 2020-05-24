@@ -20,7 +20,7 @@ namespace FilterLists.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("FilterLists.Data.Entities.FilterList", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterList", b =>
                 {
                     b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
@@ -23743,7 +23743,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Dependent", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Dependent", b =>
                 {
                     b.Property<short>("DependentFilterListId")
                         .HasColumnType("SMALLINT");
@@ -23801,7 +23801,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListLanguage", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListLanguage", b =>
                 {
                     b.Property<short>("FilterListId")
                         .HasColumnType("SMALLINT");
@@ -27269,7 +27269,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListMaintainer", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListMaintainer", b =>
                 {
                     b.Property<short>("FilterListId")
                         .HasColumnType("SMALLINT");
@@ -33392,7 +33392,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListTag", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListTag", b =>
                 {
                     b.Property<short>("FilterListId")
                         .HasColumnType("SMALLINT");
@@ -46910,7 +46910,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Fork", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Fork", b =>
                 {
                     b.Property<short>("ForkFilterListId")
                         .HasColumnType("SMALLINT");
@@ -46998,7 +46998,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Merge", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Merge", b =>
                 {
                     b.Property<short>("MergeFilterListId")
                         .HasColumnType("SMALLINT");
@@ -47356,7 +47356,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.SnapshotRule", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.SnapshotRule", b =>
                 {
                     b.Property<int>("SnapshotId")
                         .HasColumnType("MEDIUMINT");
@@ -47371,7 +47371,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                     b.ToTable("snapshots_rules");
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.SoftwareSyntax", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.SoftwareSyntax", b =>
                 {
                     b.Property<short>("SyntaxId")
                         .HasColumnType("SMALLINT");
@@ -48344,7 +48344,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Language", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Language", b =>
                 {
                     b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
@@ -50385,7 +50385,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.License", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.License", b =>
                 {
                     b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
@@ -50762,7 +50762,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Maintainer", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Maintainer", b =>
                 {
                     b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
@@ -51725,7 +51725,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Rule", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Rule", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51747,7 +51747,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                     b.ToTable("rules");
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Snapshot", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Snapshot", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51796,7 +51796,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                     b.ToTable("snapshots");
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Software", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Software", b =>
                 {
                     b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
@@ -52133,7 +52133,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Syntax", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Syntax", b =>
                 {
                     b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
@@ -52409,7 +52409,7 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Tag", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Tag", b =>
                 {
                     b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
@@ -52658,140 +52658,140 @@ Me, an intellectual: Creates these pink themes that look colourful, that are eas
                         });
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.FilterList", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterList", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.License", "License")
+                    b.HasOne("FilterLists.Domain.Entities.License", "License")
                         .WithMany("FilterLists")
                         .HasForeignKey("LicenseId");
 
-                    b.HasOne("FilterLists.Data.Entities.Syntax", "Syntax")
+                    b.HasOne("FilterLists.Domain.Entities.Syntax", "Syntax")
                         .WithMany("FilterLists")
                         .HasForeignKey("SyntaxId");
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Dependent", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Dependent", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "DependencyFilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "DependencyFilterList")
                         .WithMany("DependencyFilterLists")
                         .HasForeignKey("DependencyFilterListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "DependentFilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "DependentFilterList")
                         .WithMany("DependentFilterLists")
                         .HasForeignKey("DependentFilterListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListLanguage", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListLanguage", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "FilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "FilterList")
                         .WithMany("FilterListLanguages")
                         .HasForeignKey("FilterListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilterLists.Data.Entities.Language", "Language")
+                    b.HasOne("FilterLists.Domain.Entities.Language", "Language")
                         .WithMany("FilterListLanguages")
                         .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListMaintainer", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListMaintainer", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "FilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "FilterList")
                         .WithMany("FilterListMaintainers")
                         .HasForeignKey("FilterListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilterLists.Data.Entities.Maintainer", "Maintainer")
+                    b.HasOne("FilterLists.Domain.Entities.Maintainer", "Maintainer")
                         .WithMany("FilterListMaintainers")
                         .HasForeignKey("MaintainerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListTag", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListTag", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "FilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "FilterList")
                         .WithMany("FilterListTags")
                         .HasForeignKey("FilterListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilterLists.Data.Entities.Tag", "Tag")
+                    b.HasOne("FilterLists.Domain.Entities.Tag", "Tag")
                         .WithMany("FilterListTags")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Fork", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Fork", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "ForkFilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "ForkFilterList")
                         .WithMany("ForkFilterLists")
                         .HasForeignKey("ForkFilterListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "UpstreamFilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "UpstreamFilterList")
                         .WithMany("UpstreamForkFilterLists")
                         .HasForeignKey("UpstreamFilterListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Merge", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Merge", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "MergeFilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "MergeFilterList")
                         .WithMany("MergeFilterLists")
                         .HasForeignKey("MergeFilterListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "UpstreamFilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "UpstreamFilterList")
                         .WithMany("UpstreamMergeFilterLists")
                         .HasForeignKey("UpstreamFilterListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.SnapshotRule", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.SnapshotRule", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.Rule", "Rule")
+                    b.HasOne("FilterLists.Domain.Entities.Rule", "Rule")
                         .WithMany("SnapshotRules")
                         .HasForeignKey("RuleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilterLists.Data.Entities.Snapshot", "Snapshot")
+                    b.HasOne("FilterLists.Domain.Entities.Snapshot", "Snapshot")
                         .WithMany("SnapshotRules")
                         .HasForeignKey("SnapshotId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.SoftwareSyntax", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.SoftwareSyntax", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.Software", "Software")
+                    b.HasOne("FilterLists.Domain.Entities.Software", "Software")
                         .WithMany("SoftwareSyntaxes")
                         .HasForeignKey("SoftwareId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilterLists.Data.Entities.Syntax", "Syntax")
+                    b.HasOne("FilterLists.Domain.Entities.Syntax", "Syntax")
                         .WithMany("SoftwareSyntaxes")
                         .HasForeignKey("SyntaxId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Snapshot", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Snapshot", b =>
                 {
-                    b.HasOne("FilterLists.Data.Entities.FilterList", "FilterList")
+                    b.HasOne("FilterLists.Domain.Entities.FilterList", "FilterList")
                         .WithMany("Snapshots")
                         .HasForeignKey("FilterListId")
                         .OnDelete(DeleteBehavior.Cascade)

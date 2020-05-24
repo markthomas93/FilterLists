@@ -20,7 +20,7 @@ namespace FilterLists.Infrastructure.Migrations
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
 
-            modelBuilder.Entity("FilterLists.Data.Entities.FilterList", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterList", b =>
             {
                 b.Property<int>("Id")
                  .ValueGeneratedOnAdd()
@@ -88,7 +88,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("filterlists");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListLanguage", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListLanguage", b =>
             {
                 b.Property<int>("FilterListId");
 
@@ -105,7 +105,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("filterlists_languages");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListMaintainer", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListMaintainer", b =>
             {
                 b.Property<int>("FilterListId");
 
@@ -122,7 +122,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("filterlists_maintainers");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Fork", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Fork", b =>
             {
                 b.Property<int>("ForkFilterListId");
 
@@ -139,7 +139,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("forks");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Merge", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Merge", b =>
             {
                 b.Property<int>("MergeFilterListId");
 
@@ -156,7 +156,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("merges");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.SnapshotRule", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.SnapshotRule", b =>
             {
                 b.Property<int>("AddedBySnapshotId");
 
@@ -181,7 +181,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("snapshots_rules");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.SoftwareSyntax", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.SoftwareSyntax", b =>
             {
                 b.Property<int>("SyntaxId");
 
@@ -198,7 +198,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("software_syntaxes");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Language", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Language", b =>
             {
                 b.Property<int>("Id")
                  .ValueGeneratedOnAdd()
@@ -252,7 +252,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("languages");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.License", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.License", b =>
             {
                 b.Property<int>("Id")
                  .ValueGeneratedOnAdd()
@@ -282,7 +282,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("licenses");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Maintainer", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Maintainer", b =>
             {
                 b.Property<int>("Id")
                  .ValueGeneratedOnAdd()
@@ -318,7 +318,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("maintainers");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Rule", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Rule", b =>
             {
                 b.Property<int>("Id")
                  .ValueGeneratedOnAdd()
@@ -337,7 +337,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("rules");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Snapshot", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Snapshot", b =>
             {
                 b.Property<int>("Id")
                  .ValueGeneratedOnAdd()
@@ -368,7 +368,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("snapshots");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Software", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Software", b =>
             {
                 b.Property<int>("Id")
                  .ValueGeneratedOnAdd()
@@ -397,7 +397,7 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("software");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Syntax", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Syntax", b =>
             {
                 b.Property<int>("Id")
                  .ValueGeneratedOnAdd()
@@ -423,104 +423,104 @@ namespace FilterLists.Infrastructure.Migrations
                 b.ToTable("syntaxes");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.FilterList", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterList", b =>
             {
-                b.HasOne("FilterLists.Data.Entities.License", "License")
+                b.HasOne("FilterLists.Domain.Entities.License", "License")
                  .WithMany("FilterLists")
                  .HasForeignKey("LicenseId")
                  .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne("FilterLists.Data.Entities.Syntax", "Syntax")
+                b.HasOne("FilterLists.Domain.Entities.Syntax", "Syntax")
                  .WithMany("FilterLists")
                  .HasForeignKey("SyntaxId");
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListLanguage", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListLanguage", b =>
             {
-                b.HasOne("FilterLists.Data.Entities.FilterList", "FilterList")
+                b.HasOne("FilterLists.Domain.Entities.FilterList", "FilterList")
                  .WithMany("FilterListLanguages")
                  .HasForeignKey("FilterListId")
                  .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne("FilterLists.Data.Entities.Language", "Language")
+                b.HasOne("FilterLists.Domain.Entities.Language", "Language")
                  .WithMany("FilterListLanguages")
                  .HasForeignKey("LanguageId")
                  .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.FilterListMaintainer", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.FilterListMaintainer", b =>
             {
-                b.HasOne("FilterLists.Data.Entities.FilterList", "FilterList")
+                b.HasOne("FilterLists.Domain.Entities.FilterList", "FilterList")
                  .WithMany("FilterListMaintainers")
                  .HasForeignKey("FilterListId")
                  .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne("FilterLists.Data.Entities.Maintainer", "Maintainer")
+                b.HasOne("FilterLists.Domain.Entities.Maintainer", "Maintainer")
                  .WithMany("FilterListMaintainers")
                  .HasForeignKey("MaintainerId")
                  .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Fork", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Fork", b =>
             {
-                b.HasOne("FilterLists.Data.Entities.FilterList", "ForkFilterList")
+                b.HasOne("FilterLists.Domain.Entities.FilterList", "ForkFilterList")
                  .WithMany("ForkFilterLists")
                  .HasForeignKey("ForkFilterListId")
                  .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne("FilterLists.Data.Entities.FilterList", "UpstreamFilterList")
+                b.HasOne("FilterLists.Domain.Entities.FilterList", "UpstreamFilterList")
                  .WithMany("UpstreamForkFilterLists")
                  .HasForeignKey("UpstreamFilterListId")
                  .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.Merge", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Merge", b =>
             {
-                b.HasOne("FilterLists.Data.Entities.FilterList", "MergeFilterList")
+                b.HasOne("FilterLists.Domain.Entities.FilterList", "MergeFilterList")
                  .WithMany("MergeFilterLists")
                  .HasForeignKey("MergeFilterListId")
                  .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne("FilterLists.Data.Entities.FilterList", "UpstreamFilterList")
+                b.HasOne("FilterLists.Domain.Entities.FilterList", "UpstreamFilterList")
                  .WithMany("UpstreamMergeFilterLists")
                  .HasForeignKey("UpstreamFilterListId")
                  .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.SnapshotRule", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.SnapshotRule", b =>
             {
-                b.HasOne("FilterLists.Data.Entities.Snapshot", "AddedBySnapshot")
+                b.HasOne("FilterLists.Domain.Entities.Snapshot", "AddedBySnapshot")
                  .WithMany("AddedSnapshotRules")
                  .HasForeignKey("AddedBySnapshotId")
                  .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne("FilterLists.Data.Entities.Snapshot", "RemovedBySnapshot")
+                b.HasOne("FilterLists.Domain.Entities.Snapshot", "RemovedBySnapshot")
                  .WithMany("RemovedSnapshotRules")
                  .HasForeignKey("RemovedBySnapshotId")
                  .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne("FilterLists.Data.Entities.Rule", "Rule")
+                b.HasOne("FilterLists.Domain.Entities.Rule", "Rule")
                  .WithMany("SnapshotRules")
                  .HasForeignKey("RuleId")
                  .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Junctions.SoftwareSyntax", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.SoftwareSyntax", b =>
             {
-                b.HasOne("FilterLists.Data.Entities.Software", "Software")
+                b.HasOne("FilterLists.Domain.Entities.Software", "Software")
                  .WithMany("SoftwareSyntaxes")
                  .HasForeignKey("SoftwareId")
                  .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne("FilterLists.Data.Entities.Syntax", "Syntax")
+                b.HasOne("FilterLists.Domain.Entities.Syntax", "Syntax")
                  .WithMany("SoftwareSyntaxes")
                  .HasForeignKey("SyntaxId")
                  .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity("FilterLists.Data.Entities.Snapshot", b =>
+            modelBuilder.Entity("FilterLists.Domain.Entities.Snapshot", b =>
             {
-                b.HasOne("FilterLists.Data.Entities.FilterList", "FilterList")
+                b.HasOne("FilterLists.Domain.Entities.FilterList", "FilterList")
                  .WithMany("Snapshots")
                  .HasForeignKey("FilterListId")
                  .OnDelete(DeleteBehavior.Cascade);

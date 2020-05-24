@@ -1,12 +1,10 @@
-using FilterLists.Api.GraphQL;
 using FilterLists.Application;
 using FilterLists.Infrastructure;
-using GraphQL;
-using GraphQL.Server;
 using GraphQL.Server.Ui.Playground;
-using GraphQL.Types;
+using HotChocolate;
+using HotChocolate.AspNetCore;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -25,20 +23,13 @@ namespace FilterLists.Api
         {
             services.AddInfrastructure(Configuration);
             services.AddApplication();
-            services.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(s.GetRequiredService!));
-            services.AddScoped<ISchema, FilterListSchema>();
-            services.AddGraphQL().AddGraphTypes(ServiceLifetime.Scoped);
-            services.Configure<KestrelServerOptions>(o =>
-            {
-                //TODO: limitation of GraphQL using Newtonsoft.JSON
-                o.AllowSynchronousIO = true;
-            });
+            services.AddGraphQL(SchemaBuilder.New().AddQueryType<FilterListQuery>());
         }
 
         public static void Configure(IApplicationBuilder app)
         {
-            app.UseGraphQL<ISchema>();
-            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
+            app.UseGraphQL();
+            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions {GraphQLEndPoint = PathString.Empty});
         }
     }
 }

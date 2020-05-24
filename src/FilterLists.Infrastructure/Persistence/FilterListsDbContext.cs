@@ -1,7 +1,7 @@
 ﻿using FilterLists.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace FilterLists.Data
+namespace FilterLists.Infrastructure.Persistence
 {
     public class FilterListsDbContext : DbContext
     {

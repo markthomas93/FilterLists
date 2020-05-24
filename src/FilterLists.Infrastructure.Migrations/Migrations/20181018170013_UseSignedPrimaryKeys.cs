@@ -10,15 +10,15 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_filterlists_tags_tags_TagId(migrationBuilder);
 
             migrationBuilder.AlterColumn<short>(
-                                "Id",
-                                "tags",
-                                "SMALLINT",
-                                nullable: false,
-                                oldClrType: typeof(byte),
-                                oldType: "TINYINT UNSIGNED")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "tags",
+                    "SMALLINT",
+                    nullable: false,
+                    oldClrType: typeof(byte),
+                    oldType: "TINYINT UNSIGNED")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<short>(
                 "TagId",
@@ -33,15 +33,15 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_software_syntaxes_syntaxes_SyntaxId(migrationBuilder);
 
             migrationBuilder.AlterColumn<short>(
-                                "Id",
-                                "syntaxes",
-                                "SMALLINT",
-                                nullable: false,
-                                oldClrType: typeof(byte),
-                                oldType: "TINYINT UNSIGNED")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "syntaxes",
+                    "SMALLINT",
+                    nullable: false,
+                    oldClrType: typeof(byte),
+                    oldType: "TINYINT UNSIGNED")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<short>(
                 "SyntaxId",
@@ -69,15 +69,15 @@ namespace FilterLists.Infrastructure.Migrations
                 oldClrType: typeof(byte));
 
             migrationBuilder.AlterColumn<short>(
-                                "Id",
-                                "software",
-                                "SMALLINT",
-                                nullable: false,
-                                oldClrType: typeof(byte),
-                                oldType: "TINYINT UNSIGNED")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "software",
+                    "SMALLINT",
+                    nullable: false,
+                    oldClrType: typeof(byte),
+                    oldType: "TINYINT UNSIGNED")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             AddFK_software_syntaxes_software_SoftwareId(migrationBuilder);
 
@@ -90,15 +90,15 @@ namespace FilterLists.Infrastructure.Migrations
                 oldClrType: typeof(uint));
 
             migrationBuilder.AlterColumn<int>(
-                                "Id",
-                                "rules",
-                                "INT",
-                                nullable: false,
-                                oldClrType: typeof(uint),
-                                oldType: "INT UNSIGNED")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "rules",
+                    "INT",
+                    nullable: false,
+                    oldClrType: typeof(uint),
+                    oldType: "INT UNSIGNED")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             AddFK_snapshots_rules_rules_RuleId(migrationBuilder);
 
@@ -111,15 +111,15 @@ namespace FilterLists.Infrastructure.Migrations
                 oldClrType: typeof(uint));
 
             migrationBuilder.AlterColumn<int>(
-                                "Id",
-                                "snapshots",
-                                "MEDIUMINT",
-                                nullable: false,
-                                oldClrType: typeof(uint),
-                                oldType: "MEDIUMINT UNSIGNED")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "snapshots",
+                    "MEDIUMINT",
+                    nullable: false,
+                    oldClrType: typeof(uint),
+                    oldType: "MEDIUMINT UNSIGNED")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             AddFK_snapshots_rules_snapshots_SnapshotId(migrationBuilder);
 
@@ -192,15 +192,15 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_dependents_filterlists_DependentFilterListId(migrationBuilder);
 
             migrationBuilder.AlterColumn<short>(
-                                "Id",
-                                "filterlists",
-                                "SMALLINT",
-                                nullable: false,
-                                oldClrType: typeof(ushort),
-                                oldType: "SMALLINT UNSIGNED")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "filterlists",
+                    "SMALLINT",
+                    nullable: false,
+                    oldClrType: typeof(ushort),
+                    oldType: "SMALLINT UNSIGNED")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             AddFK_snapshots_filterlists_FilterListId(migrationBuilder);
 
@@ -237,15 +237,15 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_filterlists_maintainers_maintainers_MaintainerId(migrationBuilder);
 
             migrationBuilder.AlterColumn<short>(
-                                "Id",
-                                "maintainers",
-                                "SMALLINT",
-                                nullable: false,
-                                oldClrType: typeof(ushort),
-                                oldType: "SMALLINT UNSIGNED")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "maintainers",
+                    "SMALLINT",
+                    nullable: false,
+                    oldClrType: typeof(ushort),
+                    oldType: "SMALLINT UNSIGNED")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<short>(
                 "MaintainerId",
@@ -258,39 +258,39 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_filterlists_licenses_LicenseId(migrationBuilder);
 
             migrationBuilder.AlterColumn<short>(
-                                "Id",
-                                "licenses",
-                                "SMALLINT",
-                                nullable: false,
-                                oldClrType: typeof(byte),
-                                oldType: "TINYINT UNSIGNED")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "licenses",
+                    "SMALLINT",
+                    nullable: false,
+                    oldClrType: typeof(byte),
+                    oldType: "TINYINT UNSIGNED")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<short>(
                 "LicenseId",
                 "filterlists",
                 nullable: true,
-                defaultValue: (short)5,
+                defaultValue: (short) 5,
                 oldClrType: typeof(byte),
                 oldNullable: true,
-                oldDefaultValue: (byte)5);
+                oldDefaultValue: (byte) 5);
 
             AddFK_filterlists_licenses_LicenseId(migrationBuilder);
 
             DropFK_filterlists_languages_languages_LanguageId(migrationBuilder);
 
             migrationBuilder.AlterColumn<short>(
-                                "Id",
-                                "languages",
-                                "SMALLINT",
-                                nullable: false,
-                                oldClrType: typeof(ushort),
-                                oldType: "SMALLINT UNSIGNED")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "languages",
+                    "SMALLINT",
+                    nullable: false,
+                    oldClrType: typeof(ushort),
+                    oldType: "SMALLINT UNSIGNED")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<short>(
                 "LanguageId",
@@ -306,15 +306,15 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_filterlists_tags_tags_TagId(migrationBuilder);
 
             migrationBuilder.AlterColumn<byte>(
-                                "Id",
-                                "tags",
-                                "TINYINT UNSIGNED",
-                                nullable: false,
-                                oldClrType: typeof(short),
-                                oldType: "SMALLINT")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "tags",
+                    "TINYINT UNSIGNED",
+                    nullable: false,
+                    oldClrType: typeof(short),
+                    oldType: "SMALLINT")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<byte>(
                 "TagId",
@@ -329,15 +329,15 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_software_syntaxes_syntaxes_SyntaxId(migrationBuilder);
 
             migrationBuilder.AlterColumn<byte>(
-                                "Id",
-                                "syntaxes",
-                                "TINYINT UNSIGNED",
-                                nullable: false,
-                                oldClrType: typeof(short),
-                                oldType: "SMALLINT")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "syntaxes",
+                    "TINYINT UNSIGNED",
+                    nullable: false,
+                    oldClrType: typeof(short),
+                    oldType: "SMALLINT")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<byte>(
                 "SyntaxId",
@@ -365,15 +365,15 @@ namespace FilterLists.Infrastructure.Migrations
                 oldClrType: typeof(short));
 
             migrationBuilder.AlterColumn<byte>(
-                                "Id",
-                                "software",
-                                "TINYINT UNSIGNED",
-                                nullable: false,
-                                oldClrType: typeof(short),
-                                oldType: "SMALLINT")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "software",
+                    "TINYINT UNSIGNED",
+                    nullable: false,
+                    oldClrType: typeof(short),
+                    oldType: "SMALLINT")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             AddFK_software_syntaxes_software_SoftwareId(migrationBuilder);
 
@@ -386,15 +386,15 @@ namespace FilterLists.Infrastructure.Migrations
                 oldClrType: typeof(int));
 
             migrationBuilder.AlterColumn<uint>(
-                                "Id",
-                                "rules",
-                                "INT UNSIGNED",
-                                nullable: false,
-                                oldClrType: typeof(int),
-                                oldType: "INT")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "rules",
+                    "INT UNSIGNED",
+                    nullable: false,
+                    oldClrType: typeof(int),
+                    oldType: "INT")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             AddFK_snapshots_rules_rules_RuleId(migrationBuilder);
 
@@ -407,15 +407,15 @@ namespace FilterLists.Infrastructure.Migrations
                 oldClrType: typeof(int));
 
             migrationBuilder.AlterColumn<uint>(
-                                "Id",
-                                "snapshots",
-                                "MEDIUMINT UNSIGNED",
-                                nullable: false,
-                                oldClrType: typeof(int),
-                                oldType: "MEDIUMINT")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "snapshots",
+                    "MEDIUMINT UNSIGNED",
+                    nullable: false,
+                    oldClrType: typeof(int),
+                    oldType: "MEDIUMINT")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             AddFK_snapshots_rules_snapshots_SnapshotId(migrationBuilder);
 
@@ -488,15 +488,15 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_dependents_filterlists_DependentFilterListId(migrationBuilder);
 
             migrationBuilder.AlterColumn<ushort>(
-                                "Id",
-                                "filterlists",
-                                "SMALLINT UNSIGNED",
-                                nullable: false,
-                                oldClrType: typeof(short),
-                                oldType: "SMALLINT")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "filterlists",
+                    "SMALLINT UNSIGNED",
+                    nullable: false,
+                    oldClrType: typeof(short),
+                    oldType: "SMALLINT")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             AddFK_snapshots_filterlists_FilterListId(migrationBuilder);
 
@@ -533,15 +533,15 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_filterlists_maintainers_maintainers_MaintainerId(migrationBuilder);
 
             migrationBuilder.AlterColumn<ushort>(
-                                "Id",
-                                "maintainers",
-                                "SMALLINT UNSIGNED",
-                                nullable: false,
-                                oldClrType: typeof(short),
-                                oldType: "SMALLINT")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "maintainers",
+                    "SMALLINT UNSIGNED",
+                    nullable: false,
+                    oldClrType: typeof(short),
+                    oldType: "SMALLINT")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<ushort>(
                 "MaintainerId",
@@ -554,39 +554,39 @@ namespace FilterLists.Infrastructure.Migrations
             DropFK_filterlists_licenses_LicenseId(migrationBuilder);
 
             migrationBuilder.AlterColumn<byte>(
-                                "Id",
-                                "licenses",
-                                "TINYINT UNSIGNED",
-                                nullable: false,
-                                oldClrType: typeof(short),
-                                oldType: "SMALLINT")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "licenses",
+                    "TINYINT UNSIGNED",
+                    nullable: false,
+                    oldClrType: typeof(short),
+                    oldType: "SMALLINT")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<byte>(
                 "LicenseId",
                 "filterlists",
                 nullable: true,
-                defaultValue: (byte)5,
+                defaultValue: (byte) 5,
                 oldClrType: typeof(short),
                 oldNullable: true,
-                oldDefaultValue: (short)5);
+                oldDefaultValue: (short) 5);
 
             AddFK_filterlists_licenses_LicenseId(migrationBuilder);
 
             DropFK_filterlists_languages_languages_LanguageId(migrationBuilder);
 
             migrationBuilder.AlterColumn<ushort>(
-                                "Id",
-                                "languages",
-                                "SMALLINT UNSIGNED",
-                                nullable: false,
-                                oldClrType: typeof(short),
-                                oldType: "SMALLINT")
-                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                            .OldAnnotation("MySql:ValueGenerationStrategy",
-                                MySqlValueGenerationStrategy.IdentityColumn);
+                    "Id",
+                    "languages",
+                    "SMALLINT UNSIGNED",
+                    nullable: false,
+                    oldClrType: typeof(short),
+                    oldType: "SMALLINT")
+                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                .OldAnnotation("MySql:ValueGenerationStrategy",
+                    MySqlValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.AlterColumn<ushort>(
                 "LanguageId",

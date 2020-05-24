@@ -14,9 +14,9 @@ namespace FilterLists.Infrastructure.Migrations
                 "LicenseId",
                 "filterlists",
                 nullable: true,
-                defaultValue: (byte)5,
+                defaultValue: (byte) 5,
                 oldClrType: typeof(byte),
-                oldDefaultValue: (byte)5);
+                oldDefaultValue: (byte) 5);
 
             migrationBuilder.AddForeignKey(
                 "FK_filterlists_licenses_LicenseId",
@@ -37,10 +37,10 @@ namespace FilterLists.Infrastructure.Migrations
                 "LicenseId",
                 "filterlists",
                 nullable: false,
-                defaultValue: (byte)5,
+                defaultValue: (byte) 5,
                 oldClrType: typeof(byte),
                 oldNullable: true,
-                oldDefaultValue: (byte)5);
+                oldDefaultValue: (byte) 5);
 
             migrationBuilder.AddForeignKey(
                 "FK_filterlists_licenses_LicenseId",

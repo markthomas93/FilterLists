@@ -1,5 +1,5 @@
 ﻿using System;
-using FilterLists.Data;
+using FilterLists.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

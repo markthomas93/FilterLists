@@ -13,11 +13,11 @@ namespace FilterLists.Infrastructure.Migrations
                 table => new
                 {
                     Id = table.Column<int>("SMALLINT UNSIGNED")
-                              .Annotation("MySql:ValueGenerationStrategy",
-                                  MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     Iso6391 = table.Column<string>("VARCHAR(2)", nullable: true, defaultValueSql: "NULL"),
                     Iso6392 = table.Column<string>("VARCHAR(3)", nullable: true, defaultValueSql: "NULL"),
                     Iso6392B = table.Column<string>("VARCHAR(3)", nullable: true, defaultValueSql: "NULL"),
@@ -34,11 +34,11 @@ namespace FilterLists.Infrastructure.Migrations
                 table => new
                 {
                     Id = table.Column<int>("TINYINT UNSIGNED")
-                              .Annotation("MySql:ValueGenerationStrategy",
-                                  MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     DescriptionUrl = table.Column<string>("TEXT", nullable: true),
                     ModifiedDateUtc = table.Column<DateTime>("TIMESTAMP"),
                     Name = table.Column<string>("VARCHAR(126)"),
@@ -52,11 +52,11 @@ namespace FilterLists.Infrastructure.Migrations
                 table => new
                 {
                     Id = table.Column<int>("SMALLINT UNSIGNED")
-                              .Annotation("MySql:ValueGenerationStrategy",
-                                  MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     EmailAddress = table.Column<string>("VARCHAR(126)", nullable: true, defaultValueSql: "NULL"),
                     HomeUrl = table.Column<string>("TEXT", nullable: true),
                     ModifiedDateUtc = table.Column<DateTime>("TIMESTAMP"),
@@ -70,11 +70,11 @@ namespace FilterLists.Infrastructure.Migrations
                 table => new
                 {
                     Id = table.Column<int>("INT UNSIGNED")
-                              .Annotation("MySql:ValueGenerationStrategy",
-                                  MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     Raw = table.Column<string>("VARCHAR(8192)")
                 },
                 constraints: table => { table.PrimaryKey("PK_rules", x => x.Id); });
@@ -84,11 +84,11 @@ namespace FilterLists.Infrastructure.Migrations
                 table => new
                 {
                     Id = table.Column<int>("TINYINT UNSIGNED")
-                              .Annotation("MySql:ValueGenerationStrategy",
-                                  MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     DownloadUrl = table.Column<string>("TEXT", nullable: true),
                     HomeUrl = table.Column<string>("TEXT", nullable: true),
                     ModifiedDateUtc = table.Column<DateTime>("TIMESTAMP"),
@@ -101,11 +101,11 @@ namespace FilterLists.Infrastructure.Migrations
                 table => new
                 {
                     Id = table.Column<int>("TINYINT UNSIGNED")
-                              .Annotation("MySql:ValueGenerationStrategy",
-                                  MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     DefinitionUrl = table.Column<string>("TEXT", nullable: true),
                     ModifiedDateUtc = table.Column<DateTime>("TIMESTAMP"),
                     Name = table.Column<string>("VARCHAR(126)")
@@ -117,11 +117,11 @@ namespace FilterLists.Infrastructure.Migrations
                 table => new
                 {
                     Id = table.Column<int>("SMALLINT UNSIGNED")
-                              .Annotation("MySql:ValueGenerationStrategy",
-                                  MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>("TEXT", nullable: true),
                     DescriptionSourceUrl = table.Column<string>("TEXT", nullable: true),
                     DiscontinuedDate = table.Column<DateTime>(nullable: true),
@@ -162,8 +162,8 @@ namespace FilterLists.Infrastructure.Migrations
                     SyntaxId = table.Column<int>(),
                     SoftwareId = table.Column<int>(),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn)
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn)
                 },
                 constraints: table =>
                 {
@@ -189,8 +189,8 @@ namespace FilterLists.Infrastructure.Migrations
                     FilterListId = table.Column<int>(),
                     LanguageId = table.Column<int>(),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn)
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn)
                 },
                 constraints: table =>
                 {
@@ -216,8 +216,8 @@ namespace FilterLists.Infrastructure.Migrations
                     FilterListId = table.Column<int>(),
                     MaintainerId = table.Column<int>(),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn)
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn)
                 },
                 constraints: table =>
                 {
@@ -243,8 +243,8 @@ namespace FilterLists.Infrastructure.Migrations
                     ForkFilterListId = table.Column<int>(),
                     UpstreamFilterListId = table.Column<int>(),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn)
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn)
                 },
                 constraints: table =>
                 {
@@ -270,8 +270,8 @@ namespace FilterLists.Infrastructure.Migrations
                     MergeFilterListId = table.Column<int>(),
                     UpstreamFilterListId = table.Column<int>(),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn)
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn)
                 },
                 constraints: table =>
                 {
@@ -295,11 +295,11 @@ namespace FilterLists.Infrastructure.Migrations
                 table => new
                 {
                     Id = table.Column<int>("MEDIUMINT UNSIGNED")
-                              .Annotation("MySql:ValueGenerationStrategy",
-                                  MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     FilterListId = table.Column<int>(),
                     HttpStatusCode = table.Column<string>("VARCHAR(3)", nullable: true, defaultValueSql: "NULL")
                 },
@@ -321,8 +321,8 @@ namespace FilterLists.Infrastructure.Migrations
                     AddedBySnapshotId = table.Column<int>(),
                     RuleId = table.Column<int>(),
                     CreatedDateUtc = table.Column<DateTime>("TIMESTAMP")
-                                          .Annotation("MySql:ValueGenerationStrategy",
-                                              MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     ModifiedDateUtc = table.Column<DateTime>("TIMESTAMP"),
                     RemovedBySnapshotId = table.Column<int>(nullable: true)
                 },

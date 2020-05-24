@@ -13,8 +13,8 @@ namespace FilterLists.Infrastructure.Migrations
                 table => new
                 {
                     Id = table.Column<byte>("TINYINT UNSIGNED")
-                              .Annotation("MySql:ValueGenerationStrategy",
-                                  MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy",
+                            MySqlValueGenerationStrategy.IdentityColumn),
                     CreatedDateUtc =
                         table.Column<DateTime>("TIMESTAMP", nullable: false, defaultValueSql: "current_timestamp()"),
                     ModifiedDateUtc = table.Column<DateTime>("TIMESTAMP", nullable: false,

@@ -25,10 +25,11 @@ namespace FilterLists.Infrastructure.Persistence
         public DbSet<Syntax> Syntaxes { get; set; } = null!;
         public DbSet<Tag> Tags { get; set; } = null!;
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            _ = modelBuilder ?? throw new ArgumentNullException(nameof(modelBuilder));
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(FilterListsDbContext).Assembly);
+            _ = builder ?? throw new ArgumentNullException(nameof(builder));
+
+            builder.ApplyConfigurationsFromAssembly(typeof(FilterListsDbContext).Assembly);
         }
     }
 }

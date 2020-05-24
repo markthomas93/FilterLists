@@ -11,9 +11,9 @@ namespace FilterLists.Domain.Entities
             SoftwareSyntaxes = new HashSet<SoftwareSyntax>();
         }
 
-        public string DefinitionUrl { get; set; }
-        public string Name { get; set; }
-        public ICollection<FilterList> FilterLists { get; set; }
-        public ICollection<SoftwareSyntax> SoftwareSyntaxes { get; set; }
+        public string DefinitionUrl { get; set; } = null!;
+        public string Name { get; set; } = null!;
+        public ICollection<FilterList> FilterLists { get; }
+        public ICollection<SoftwareSyntax> SoftwareSyntaxes { get; }
     }
 }

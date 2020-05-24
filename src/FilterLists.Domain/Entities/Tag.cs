@@ -10,8 +10,8 @@ namespace FilterLists.Domain.Entities
             FilterListTags = new HashSet<FilterListTag>();
         }
 
-        public string Description { get; set; }
-        public string Name { get; set; }
-        public ICollection<FilterListTag> FilterListTags { get; set; }
+        public string Description { get; set; } = null!;
+        public string Name { get; set; } = null!;
+        public ICollection<FilterListTag> FilterListTags { get; }
     }
 }

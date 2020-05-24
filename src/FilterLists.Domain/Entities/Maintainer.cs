@@ -10,10 +10,10 @@ namespace FilterLists.Domain.Entities
             FilterListMaintainers = new HashSet<FilterListMaintainer>();
         }
 
-        public string EmailAddress { get; set; }
-        public string HomeUrl { get; set; }
-        public string Name { get; set; }
-        public string TwitterHandle { get; set; }
-        public ICollection<FilterListMaintainer> FilterListMaintainers { get; set; }
+        public string EmailAddress { get; set; } = null!;
+        public string HomeUrl { get; set; } = null!;
+        public string Name { get; set; } = null!;
+        public string TwitterHandle { get; set; } = null!;
+        public ICollection<FilterListMaintainer> FilterListMaintainers { get; }
     }
 }

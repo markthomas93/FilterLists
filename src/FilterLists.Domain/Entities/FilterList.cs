@@ -19,34 +19,34 @@ namespace FilterLists.Domain.Entities
             FilterListTags = new HashSet<FilterListTag>();
         }
 
-        public string ChatUrl { get; set; }
-        public string Description { get; set; }
-        public string DescriptionSourceUrl { get; set; }
-        public string DonateUrl { get; set; }
-        public string EmailAddress { get; set; }
-        public string ForumUrl { get; set; }
-        public string HomeUrl { get; set; }
-        public string IssuesUrl { get; set; }
+        public string ChatUrl { get; set; } = null!;
+        public string Description { get; set; } = null!;
+        public string DescriptionSourceUrl { get; set; } = null!;
+        public string DonateUrl { get; set; } = null!;
+        public string EmailAddress { get; set; } = null!;
+        public string ForumUrl { get; set; } = null!;
+        public string HomeUrl { get; set; } = null!;
+        public string IssuesUrl { get; set; } = null!;
         public int? LicenseId { get; set; }
-        public License License { get; set; }
-        public string Name { get; set; }
-        public string PolicyUrl { get; set; }
+        public License License { get; set; } = null!;
+        public string Name { get; set; } = null!;
+        public string PolicyUrl { get; set; } = null!;
         public DateTime? PublishedDate { get; set; }
-        public string SubmissionUrl { get; set; }
+        public string SubmissionUrl { get; set; } = null!;
         public int? SyntaxId { get; set; }
-        public Syntax Syntax { get; set; }
+        public Syntax Syntax { get; set; } = null!;
         public DateTime? UpdatedDate { get; set; }
-        public string ViewUrl { get; set; }
-        public string ViewUrlMirror1 { get; set; }
-        public string ViewUrlMirror2 { get; set; }
-        public ICollection<Dependent> DependentFilterLists { get; set; }
-        public ICollection<Dependent> DependencyFilterLists { get; set; }
-        public ICollection<Fork> ForkFilterLists { get; set; }
-        public ICollection<Fork> UpstreamForkFilterLists { get; set; }
-        public ICollection<FilterListLanguage> FilterListLanguages { get; set; }
-        public ICollection<FilterListMaintainer> FilterListMaintainers { get; set; }
-        public ICollection<Merge> MergeFilterLists { get; set; }
-        public ICollection<Merge> UpstreamMergeFilterLists { get; set; }
-        public ICollection<FilterListTag> FilterListTags { get; set; }
+        public string ViewUrl { get; set; } = null!;
+        public string ViewUrlMirror1 { get; set; } = null!;
+        public string ViewUrlMirror2 { get; set; } = null!;
+        public ICollection<Dependent> DependentFilterLists { get; }
+        public ICollection<Dependent> DependencyFilterLists { get; }
+        public ICollection<Fork> ForkFilterLists { get; }
+        public ICollection<Fork> UpstreamForkFilterLists { get; }
+        public ICollection<FilterListLanguage> FilterListLanguages { get; }
+        public ICollection<FilterListMaintainer> FilterListMaintainers { get; }
+        public ICollection<Merge> MergeFilterLists { get; }
+        public ICollection<Merge> UpstreamMergeFilterLists { get; }
+        public ICollection<FilterListTag> FilterListTags { get; }
     }
 }

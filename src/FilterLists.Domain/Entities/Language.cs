@@ -10,13 +10,13 @@ namespace FilterLists.Domain.Entities
             FilterListLanguages = new HashSet<FilterListLanguage>();
         }
 
-        public string Iso6391 { get; set; } = null!;
-        public string Iso6392 { get; set; } = null!;
-        public string Iso6392B { get; set; } = null!;
-        public string Iso6392T { get; set; } = null!;
-        public string Iso6393 { get; set; } = null!;
-        public string LocalName { get; set; } = null!;
-        public string Name { get; set; } = null!;
+        public string? Iso6391 { get; set; }
+        public string? Iso6392 { get; set; }
+        public string? Iso6392B { get; set; }
+        public string? Iso6392T { get; set; }
+        public string? Iso6393 { get; set; }
+        public string? LocalName { get; set; }
+        public string? Name { get; set; }
         public ICollection<FilterListLanguage> FilterListLanguages { get; }
     }
 }

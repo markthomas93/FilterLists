@@ -19,26 +19,26 @@ namespace FilterLists.Domain.Entities
             FilterListTags = new HashSet<FilterListTag>();
         }
 
-        public string ChatUrl { get; set; } = null!;
-        public string Description { get; set; } = null!;
-        public string DescriptionSourceUrl { get; set; } = null!;
-        public string DonateUrl { get; set; } = null!;
-        public string EmailAddress { get; set; } = null!;
-        public string ForumUrl { get; set; } = null!;
-        public string HomeUrl { get; set; } = null!;
-        public string IssuesUrl { get; set; } = null!;
+        public string? ChatUrl { get; set; }
+        public string? Description { get; set; }
+        public string? DescriptionSourceUrl { get; set; }
+        public string? DonateUrl { get; set; }
+        public string? EmailAddress { get; set; }
+        public string? ForumUrl { get; set; }
+        public string? HomeUrl { get; set; }
+        public string? IssuesUrl { get; set; }
         public int? LicenseId { get; set; }
         public License License { get; set; } = null!;
         public string Name { get; set; } = null!;
-        public string PolicyUrl { get; set; } = null!;
+        public string? PolicyUrl { get; set; }
         public DateTime? PublishedDate { get; set; }
-        public string SubmissionUrl { get; set; } = null!;
+        public string? SubmissionUrl { get; set; }
         public int? SyntaxId { get; set; }
         public Syntax Syntax { get; set; } = null!;
         public DateTime? UpdatedDate { get; set; }
-        public string ViewUrl { get; set; } = null!;
-        public string ViewUrlMirror1 { get; set; } = null!;
-        public string ViewUrlMirror2 { get; set; } = null!;
+        public string? ViewUrl { get; set; }
+        public string? ViewUrlMirror1 { get; set; }
+        public string? ViewUrlMirror2 { get; set; }
         public ICollection<Dependent> DependentFilterLists { get; }
         public ICollection<Dependent> DependencyFilterLists { get; }
         public ICollection<Fork> ForkFilterLists { get; }

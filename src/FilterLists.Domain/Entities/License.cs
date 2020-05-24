@@ -10,7 +10,7 @@ namespace FilterLists.Domain.Entities
             FilterLists = new HashSet<FilterList>();
         }
 
-        public string DescriptionUrl { get; set; } = null!;
+        public string? DescriptionUrl { get; set; }
         public string Name { get; set; } = null!;
         public bool PermissiveAdaptation { get; set; }
         public bool PermissiveCommercial { get; set; }

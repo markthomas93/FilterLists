@@ -10,8 +10,8 @@ namespace FilterLists.Domain.Entities
             SoftwareSyntaxes = new HashSet<SoftwareSyntax>();
         }
 
-        public string DownloadUrl { get; set; } = null!;
-        public string HomeUrl { get; set; } = null!;
+        public string? DownloadUrl { get; set; }
+        public string? HomeUrl { get; set; }
         public bool IsAbpSubscribable { get; set; }
         public string Name { get; set; } = null!;
         public ICollection<SoftwareSyntax> SoftwareSyntaxes { get; }

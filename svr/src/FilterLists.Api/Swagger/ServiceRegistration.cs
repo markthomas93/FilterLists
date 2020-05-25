@@ -29,7 +29,7 @@ namespace FilterLists.Api.Swagger
                     },
                     License = new OpenApiLicense
                     {
-                        Name = "MIT",
+                        Name = $"Released under MIT License. ©{DateTime.Now.Year} Collin M. Barrett",
                         Url = new Uri("https://github.com/collinbarrett/FilterLists/blob/master/LICENSE")
                     }
                 });

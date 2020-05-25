@@ -1,10 +1,8 @@
 using FilterLists.Application;
 using FilterLists.Infrastructure;
-using GraphQL.Server.Ui.Playground;
-using HotChocolate;
-using HotChocolate.AspNetCore;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -23,13 +21,22 @@ namespace FilterLists.Api
         {
             services.AddInfrastructure(Configuration);
             services.AddApplication();
-            services.AddGraphQL(SchemaBuilder.New().AddQueryType<FilterListQuery>());
+            services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Latest);
+            services.Configure<ForwardedHeadersOptions>(o =>
+                o.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto);
+            services.AddOpenApiDocument();
         }
 
         public static void Configure(IApplicationBuilder app)
         {
-            app.UseGraphQL();
-            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions {GraphQLEndPoint = PathString.Empty});
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+            app.UseRouting();
+            app.UseEndpoints(e => { e.MapControllers(); });
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }

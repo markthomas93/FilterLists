@@ -2,7 +2,6 @@ using FilterLists.Api.Odata;
 using FilterLists.Api.Swagger;
 using FilterLists.Application;
 using FilterLists.Infrastructure;
-using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
@@ -28,15 +27,9 @@ namespace FilterLists.Api
             services.Configure<ForwardedHeadersOptions>(o =>
                 o.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto);
             services.AddApiVersioning();
-            services.AddOData().EnableApiVersioning();
+            services.AddOdataCustom();
             services.AddControllers(o => o.SetOdataOutputFormatters())
                 .SetCompatibilityVersion(CompatibilityVersion.Latest);
-            services.AddODataApiExplorer(
-                o =>
-                {
-                    o.GroupNameFormat = "'v'VVV";
-                    o.SubstituteApiVersionInUrl = true;
-                });
             services.AddSwaggerGenCustom();
         }
 

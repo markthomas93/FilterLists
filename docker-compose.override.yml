@@ -10,3 +10,5 @@ services:
   api:
     build:
       dockerfile: src/FilterLists.Api/debug.Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${API_ASPNETCORE_ENVIRONMENT}

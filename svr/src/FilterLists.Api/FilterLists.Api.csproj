@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FilterLists.Application\FilterLists.Application.csproj" />
+    <ProjectReference Include="..\FilterLists.Infrastructure.Migrations\FilterLists.Infrastructure.Migrations.csproj" />
     <ProjectReference Include="..\FilterLists.Infrastructure\FilterLists.Infrastructure.csproj" />
   </ItemGroup>
 

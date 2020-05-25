@@ -1,6 +1,5 @@
 ﻿using System;
 using FilterLists.Domain.Entities.Common;
-using FilterLists.Infrastructure.Persistence.Seed;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

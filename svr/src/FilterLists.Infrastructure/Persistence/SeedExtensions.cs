@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-namespace FilterLists.Infrastructure.Persistence.Seed
+namespace FilterLists.Infrastructure.Persistence
 {
-    public static class SeedExtension
+    public static class SeedExtensions
     {
         public static void HasDataJsonFile<TEntity>(this EntityTypeBuilder builder)
         {
@@ -21,6 +24,17 @@ namespace FilterLists.Infrastructure.Persistence.Seed
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
             builder.HasData((IEnumerable<object>) entities);
+        }
+
+        public static IHost Migrate<TContext>(this IHost host) where TContext : DbContext
+        {
+            _ = host ?? throw new ArgumentNullException(nameof(host));
+
+            using var scope = host.Services.CreateScope();
+            var services = scope.ServiceProvider;
+            var context = services.GetService<TContext>();
+            context.Database.Migrate();
+            return host;
         }
     }
 }

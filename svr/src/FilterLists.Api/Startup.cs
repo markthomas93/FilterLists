@@ -1,13 +1,11 @@
 using FilterLists.Application;
 using FilterLists.Infrastructure;
-using Microsoft.AspNet.OData.Builder;
-using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OData.Edm;
+using Microsoft.OpenApi.Models;
 
 namespace FilterLists.Api
 {
@@ -24,13 +22,11 @@ namespace FilterLists.Api
         {
             services.AddInfrastructure(Configuration);
             services.AddApplication();
-            services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Latest);
             services.Configure<ForwardedHeadersOptions>(o =>
                 o.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto);
-            services.AddApiVersioning();
-            services.AddOData().EnableApiVersioning();
-            services.AddVersionedApiExplorer(o => o.GroupNameFormat = "'v'VVV");
-            services.AddOpenApiDocument(s => s.PostProcess = d => { d.Info.Title = "FilterLists API"; });
+            services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Latest);
+            services.AddSwaggerGen(o =>
+                o.SwaggerDoc("v1", new OpenApiInfo {Title = "FilterLists API", Version = "v1"}));
         }
 
         public static void Configure(IApplicationBuilder app)
@@ -40,21 +36,9 @@ namespace FilterLists.Api
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
             app.UseRouting();
-            app.UseEndpoints(e =>
-            {
-                e.MapControllers();
-                e.Select().Filter().OrderBy().Count().MaxTop(10);
-                e.MapODataRoute("odata", "odata", GetEdmModel());
-            });
-            app.UseOpenApi();
-            app.UseSwaggerUi3();
-        }
-
-        private static IEdmModel GetEdmModel()
-        {
-            var odataBuilder = new ODataConventionModelBuilder();
-            odataBuilder.EntitySet<WeatherForecast>("WeatherForecast");
-            return odataBuilder.GetEdmModel();
+            app.UseEndpoints(e => e.MapControllers());
+            app.UseSwagger();
+            app.UseSwaggerUI(o => o.SwaggerEndpoint("/api/swagger/v1/swagger.json", "FilterLists API"));
         }
     }
 }

@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FilterLists.Api.V1
 {
+    /// <summary>
+    ///     The weather forecasts controller.
+    /// </summary>
+    /// <seealso cref="ODataController" />
     [Route("[controller]")]
     [ApiExplorerSettings]
     public class WeatherForecastController : ODataController
@@ -15,6 +19,10 @@ namespace FilterLists.Api.V1
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        /// <summary>
+        ///     Gets the weather forecasts.
+        /// </summary>
+        /// <returns>The weather forecasts.</returns>
         [HttpGet]
         [EnableQuery]
         public IEnumerable<WeatherForecast> Get()

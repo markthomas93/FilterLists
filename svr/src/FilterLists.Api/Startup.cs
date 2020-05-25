@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using FilterLists.Application;
 using FilterLists.Infrastructure;
 using Microsoft.AspNet.OData.Builder;
@@ -60,6 +62,9 @@ namespace FilterLists.Api
                         Url = new Uri("https://github.com/collinbarrett/FilterLists/blob/master/LICENSE")
                     }
                 });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 

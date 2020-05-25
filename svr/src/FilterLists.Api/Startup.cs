@@ -6,6 +6,7 @@ using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,13 +27,21 @@ namespace FilterLists.Api
             services.AddApplication();
             services.Configure<ForwardedHeadersOptions>(o =>
                 o.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto);
-            services.AddOData();
+            services.AddApiVersioning();
+            services.AddOData().EnableApiVersioning();
             services.AddControllers(o => o.SetOdataOutputFormatters())
                 .SetCompatibilityVersion(CompatibilityVersion.Latest);
+            services.AddODataApiExplorer(
+                o =>
+                {
+                    o.GroupNameFormat = "'v'VVV";
+                    o.SubstituteApiVersionInUrl = true;
+                });
             services.AddSwaggerGenCustom();
         }
 
-        public static void Configure(IApplicationBuilder app)
+        public static void Configure(IApplicationBuilder app,
+            IApiVersionDescriptionProvider apiVersionDescriptionProvider)
         {
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
@@ -44,7 +53,7 @@ namespace FilterLists.Api
                 e.MapControllers();
                 e.ConfigureOdata();
             });
-            app.UseSwaggerCustom();
+            app.UseSwaggerCustom(apiVersionDescriptionProvider);
         }
     }
 }

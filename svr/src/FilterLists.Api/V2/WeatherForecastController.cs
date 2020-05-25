@@ -4,13 +4,13 @@ using System.Linq;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FilterLists.Api.V1
+namespace FilterLists.Api.V2
 {
     /// <summary>
     ///     The weather forecasts controller.
     /// </summary>
     /// <seealso cref="ODataController" />
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     [Route("[controller]")]
     [ApiExplorerSettings]
     public class WeatherForecastController : ODataController

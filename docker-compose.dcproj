@@ -5,7 +5,7 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>9ffdeeb8-e5f0-4892-a34f-69f347341212</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/{Scheme}://{ServiceHost}:{ServicePort}/ui/playground</DockerServiceUrl>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/{Scheme}://{ServiceHost}:{ServicePort}/api/swagger</DockerServiceUrl>
     <DockerServiceName>filterlists.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>

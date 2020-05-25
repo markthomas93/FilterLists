@@ -17,6 +17,8 @@ using Microsoft.Net.Http.Headers;
 using Microsoft.OData.Edm;
 using Microsoft.OpenApi.Models;
 
+#pragma warning disable 1591
+
 namespace FilterLists.Api
 {
     public class Startup

@@ -2,6 +2,8 @@ using FilterLists.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
+#pragma warning disable 1591
+
 namespace FilterLists.Api
 {
     public static class Program

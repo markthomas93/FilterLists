@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using FilterLists.Application;
@@ -41,7 +42,25 @@ namespace FilterLists.Api
                     oDataOutputFormatter.SupportedMediaTypes.Add(odataMediaTypeHeaderValue);
             }).SetCompatibilityVersion(CompatibilityVersion.Latest);
             services.AddSwaggerGen(c =>
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "FilterLists API", Version = "v1"}));
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "FilterLists API",
+                    Description =
+                        "The independent, comprehensive directory of filter and host lists for advertisements, trackers, malware, and annoyances.",
+                    Version = "v1",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "FilterLists",
+                        Url = new Uri("https://github.com/collinbarrett/FilterLists")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "MIT",
+                        Url = new Uri("https://github.com/collinbarrett/FilterLists/blob/master/LICENSE")
+                    }
+                });
+            });
         }
 
         public static void Configure(IApplicationBuilder app)

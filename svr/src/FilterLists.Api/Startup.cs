@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.Versioning.Conventions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -30,6 +31,7 @@ namespace FilterLists.Api
             {
                 o.AssumeDefaultVersionWhenUnspecified = true;
                 o.ReportApiVersions = true;
+                o.Conventions.Add(new VersionByNamespaceConvention());
             });
             services.AddOdataCustom();
             services.AddControllers(o => o.SetOdataOutputFormatters())

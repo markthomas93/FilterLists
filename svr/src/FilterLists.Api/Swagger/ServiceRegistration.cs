@@ -6,8 +6,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-#pragma warning disable 1591
-
 namespace FilterLists.Api.Swagger
 {
     public static class ServiceRegistration

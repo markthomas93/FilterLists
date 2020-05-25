@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNet.OData.Builder;
 using Microsoft.OData.Edm;
 
-#pragma warning disable 1591
-
 namespace FilterLists.Api.Odata
 {
     public static class EdmModelFactory

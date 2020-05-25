@@ -6,8 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Net.Http.Headers;
 
-#pragma warning disable 1591
-
 namespace FilterLists.Api.Odata
 {
     public static class ServiceRegistration

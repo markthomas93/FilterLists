@@ -14,12 +14,7 @@ namespace FilterLists.Api.Odata
         public static void AddOdataCustom(this IServiceCollection services)
         {
             services.AddOData().EnableApiVersioning();
-            services.AddODataApiExplorer(
-                o =>
-                {
-                    o.GroupNameFormat = "'v'VVV";
-                    o.SubstituteApiVersionInUrl = true;
-                });
+            services.AddODataApiExplorer(o => o.GroupNameFormat = "'v'VVV");
         }
 
         public static void SetOdataOutputFormatters(this MvcOptions mvcOptions)

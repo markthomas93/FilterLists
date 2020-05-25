@@ -26,7 +26,11 @@ namespace FilterLists.Api
             services.AddApplication();
             services.Configure<ForwardedHeadersOptions>(o =>
                 o.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto);
-            services.AddApiVersioning();
+            services.AddApiVersioning(o =>
+            {
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.ReportApiVersions = true;
+            });
             services.AddOdataCustom();
             services.AddControllers(o => o.SetOdataOutputFormatters())
                 .SetCompatibilityVersion(CompatibilityVersion.Latest);

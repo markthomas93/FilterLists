@@ -10,7 +10,6 @@ namespace FilterLists.Api.V1
     ///     The weather forecasts controller.
     /// </summary>
     /// <seealso cref="ODataController" />
-    [ApiVersion("1.0")]
     [Route("[controller]")]
     [ApiExplorerSettings]
     public class WeatherForecastController : ODataController

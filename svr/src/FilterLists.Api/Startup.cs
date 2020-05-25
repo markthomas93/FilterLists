@@ -54,7 +54,7 @@ namespace FilterLists.Api
             app.UseEndpoints(e =>
             {
                 e.MapControllers();
-                e.MaxTop(10);
+                e.MaxTop(10).Expand().Select().Filter().OrderBy().Count().SkipToken();
                 e.MapODataRoute("odata", default, GetEdmModel());
             });
             app.UseSwagger(o =>

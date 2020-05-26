@@ -1,4 +1,4 @@
-using FilterLists.Api.Infrastructure.Odata;
+using FilterLists.Api.Infrastructure.OData;
 using FilterLists.Api.Infrastructure.Swagger;
 using FilterLists.Application;
 using FilterLists.Infrastructure;

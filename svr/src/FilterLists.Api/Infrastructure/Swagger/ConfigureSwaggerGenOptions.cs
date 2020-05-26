@@ -44,7 +44,6 @@ namespace FilterLists.Api.Infrastructure.Swagger
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             options.IncludeXmlComments(xmlPath);
             options.OperationFilter<SwaggerDefaultValuesOperationFilter>();
-            options.OperationFilter<OdataQueryParametersOperationFilter>();
         }
     }
 }

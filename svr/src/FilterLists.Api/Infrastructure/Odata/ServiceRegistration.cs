@@ -3,18 +3,20 @@ using System.Linq;
 using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNet.OData.Formatter;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
 
-namespace FilterLists.Api.Infrastructure.Odata
+namespace FilterLists.Api.Infrastructure.OData
 {
     public static class ServiceRegistration
     {
         public static void AddOdataCustom(this IServiceCollection services)
         {
             services.AddOData().EnableApiVersioning();
-            services.AddODataApiExplorer(o => o.GroupNameFormat = "'v'VVV");
+            services.AddODataApiExplorer();
+            services.AddTransient<IApiDescriptionProvider, ODataQueryOptionApiDescriptionProvider>();
         }
 
         public static void SetOdataOutputFormatters(this MvcOptions mvcOptions)

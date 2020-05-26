@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <PublishTrimmed>true</PublishTrimmed>
+    <!--<PublishTrimmed>true</PublishTrimmed>-->
     <PublishReadyToRun>true</PublishReadyToRun>
     <RuntimeIdentifiers>win10-x64;linux-musl-x64</RuntimeIdentifiers>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>

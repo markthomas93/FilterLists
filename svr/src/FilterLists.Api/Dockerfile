@@ -6,21 +6,21 @@ EXPOSE 80
 ENTRYPOINT ["./FilterLists.Api"]
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build
-WORKDIR /app/src
+WORKDIR /src
 COPY ["src/FilterLists.Application/FilterLists.Application.csproj", "FilterLists.Application/"]
 COPY ["src/FilterLists.Domain/FilterLists.Domain.csproj", "FilterLists.Domain/"]
 COPY ["src/FilterLists.Infrastructure/FilterLists.Infrastructure.csproj", "FilterLists.Infrastructure/"]
 COPY ["src/FilterLists.Infrastructure.Migrations/FilterLists.Infrastructure.Migrations.csproj", "FilterLists.Infrastructure.Migrations/"]
-WORKDIR "/app/src/FilterLists.Api"
+WORKDIR "/src/FilterLists.Api"
 COPY ["src/FilterLists.Api/FilterLists.Api.csproj", "."]
 RUN dotnet restore
 
-WORKDIR /app/src
+WORKDIR /src
 COPY ["src/FilterLists.Application/.", "FilterLists.Application/"]
 COPY ["src/FilterLists.Domain/.", "FilterLists.Domain/"]
 COPY ["src/FilterLists.Infrastructure/.", "FilterLists.Infrastructure/"]
 COPY ["src/FilterLists.Infrastructure.Migrations/.", "FilterLists.Infrastructure.Migrations/"]
-WORKDIR "/app/src/FilterLists.Api"
+WORKDIR "/src/FilterLists.Api"
 COPY ["src/FilterLists.Api/.", "."]
 RUN dotnet build -c Release -r linux-musl-x64 --no-restore
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.OData.Builder;
+﻿using FilterLists.Api.Controllers.V1;
+using Microsoft.AspNet.OData.Builder;
 using Microsoft.OData.Edm;
 
 namespace FilterLists.Api.Infrastructure.Odata

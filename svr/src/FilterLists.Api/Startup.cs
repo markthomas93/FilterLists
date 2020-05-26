@@ -1,5 +1,5 @@
-using FilterLists.Api.Odata;
-using FilterLists.Api.Swagger;
+using FilterLists.Api.Infrastructure.Odata;
+using FilterLists.Api.Infrastructure.Swagger;
 using FilterLists.Application;
 using FilterLists.Infrastructure;
 using Microsoft.AspNetCore.Builder;

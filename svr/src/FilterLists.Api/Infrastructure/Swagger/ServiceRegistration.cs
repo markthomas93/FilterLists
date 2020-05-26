@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace FilterLists.Api.Swagger
+namespace FilterLists.Api.Infrastructure.Swagger
 {
     public static class ServiceRegistration
     {

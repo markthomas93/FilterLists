@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FilterLists.Api.V1
+namespace FilterLists.Api.Controllers.V1
 {
     /// <summary>
     ///     The weather forecasts controller.
@@ -36,5 +36,14 @@ namespace FilterLists.Api.V1
                 })
                 .ToArray();
         }
+    }
+
+    public class WeatherForecast
+    {
+        public Guid Id { get; set; }
+        public DateTime Date { get; set; }
+        public int TemperatureC { get; set; }
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        public string Summary { get; set; }
     }
 }

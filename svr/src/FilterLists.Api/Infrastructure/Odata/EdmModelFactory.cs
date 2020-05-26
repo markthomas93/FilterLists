@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.OData.Builder;
 using Microsoft.OData.Edm;
 
-namespace FilterLists.Api.Odata
+namespace FilterLists.Api.Infrastructure.Odata
 {
     public static class EdmModelFactory
     {

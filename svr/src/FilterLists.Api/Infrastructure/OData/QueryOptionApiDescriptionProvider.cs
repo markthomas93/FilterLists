@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace FilterLists.Api.Infrastructure.OData
 {
-    public class ODataQueryOptionApiDescriptionProvider : IApiDescriptionProvider
+    public class QueryOptionApiDescriptionProvider : IApiDescriptionProvider
     {
         private readonly IModelMetadataProvider _provider;
 
-        public ODataQueryOptionApiDescriptionProvider(IModelMetadataProvider provider)
+        public QueryOptionApiDescriptionProvider(IModelMetadataProvider provider)
         {
             _provider = provider;
         }

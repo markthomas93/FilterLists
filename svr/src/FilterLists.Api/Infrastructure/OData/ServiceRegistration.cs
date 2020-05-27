@@ -16,7 +16,7 @@ namespace FilterLists.Api.Infrastructure.OData
         {
             services.AddOData().EnableApiVersioning();
             services.AddODataApiExplorer();
-            services.AddTransient<IApiDescriptionProvider, ODataQueryOptionApiDescriptionProvider>();
+            services.AddTransient<IApiDescriptionProvider, QueryOptionApiDescriptionProvider>();
         }
 
         public static void SetOdataOutputFormatters(this MvcOptions mvcOptions)

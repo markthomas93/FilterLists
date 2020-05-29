@@ -97,7 +97,7 @@ namespace FilterLists.Api
                     // routeBuilder.SetDefaultODataOptions( new ODataOptions() { UrlKeyDelimiter = Parentheses } );
                     routeBuilder.ServiceProvider.GetRequiredService<ODataOptions>().UrlKeyDelimiter = Parentheses;
                     routeBuilder.Count();
-                    routeBuilder.MapVersionedODataRoutes("odata", "api", modelBuilder.GetEdmModels());
+                    routeBuilder.MapVersionedODataRoutes("odata", string.Empty, modelBuilder.GetEdmModels());
                 });
             app.UseSwagger(o => o.PreSerializeFilters.Add((openApiDocument, _) =>
                 openApiDocument.Servers = new List<OpenApiServer> {new OpenApiServer {Url = "/api"}}));

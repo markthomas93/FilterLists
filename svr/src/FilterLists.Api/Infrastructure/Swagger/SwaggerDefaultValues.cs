@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
@@ -7,13 +6,10 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace FilterLists.Api.Infrastructure.Swagger
 {
-    public class SwaggerDefaultValuesOperationFilter : IOperationFilter
+    public class SwaggerDefaultValues : IOperationFilter
     {
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
-            _ = operation ?? throw new ArgumentNullException(nameof(operation));
-            _ = context ?? throw new ArgumentNullException(nameof(context));
-
             var apiDescription = context.ApiDescription;
             operation.Deprecated |= apiDescription.IsDeprecated();
             if (operation.Parameters == null) return;

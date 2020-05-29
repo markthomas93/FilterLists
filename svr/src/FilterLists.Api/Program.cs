@@ -1,4 +1,4 @@
-using FilterLists.Infrastructure.Persistence;
+﻿using FilterLists.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OData.UriParser;
 
-namespace FilterLists.Api.V3
+namespace FilterLists.Api.Controllers.V3
 {
     using static StatusCodes;
 

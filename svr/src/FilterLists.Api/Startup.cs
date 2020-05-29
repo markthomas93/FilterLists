@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using FilterLists.Api.Controllers.V2;
 using FilterLists.Api.Infrastructure.Swagger;
-using FilterLists.Api.V2;
 using FilterLists.Application;
 using FilterLists.Infrastructure;
 using Microsoft.AspNet.OData;
@@ -48,8 +48,7 @@ namespace FilterLists.Api
         {
             services.AddInfrastructure(Configuration);
             services.AddApplication();
-
-            services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(Latest);
+            services.AddControllers(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(Latest);
             services.AddApiVersioning(options => options.ReportApiVersions = true);
             services.AddOData().EnableApiVersioning();
             services.AddODataApiExplorer(
@@ -70,7 +69,7 @@ namespace FilterLists.Api
                         .AllowTop(100)
                         .AllowOrderBy("firstName", "lastName");
 
-                    options.QueryOptions.Controller<V3.PeopleController>()
+                    options.QueryOptions.Controller<Controllers.V3.PeopleController>()
                         .Action(c => c.Get(default))
                         .Allow(Skip | Count)
                         .AllowTop(100)
@@ -88,29 +87,16 @@ namespace FilterLists.Api
                 });
         }
 
-        /// <summary>
-        ///     Configures the application using the provided builder, hosting environment, and logging factory.
-        /// </summary>
-        /// <param name="app">The current application builder.</param>
-        /// <param name="modelBuilder">
-        ///     The <see cref="VersionedODataModelBuilder">model builder</see> used to create OData entity
-        ///     data models (EDMs).
-        /// </param>
-        /// <param name="provider">The API version descriptor provider used to enumerate defined API versions.</param>
-        public void Configure(IApplicationBuilder app, VersionedODataModelBuilder modelBuilder,
+        public static void Configure(IApplicationBuilder app, VersionedODataModelBuilder modelBuilder,
             IApiVersionDescriptionProvider provider)
         {
             app.UseMvc(
                 routeBuilder =>
                 {
-                    // the following will not work as expected
                     // BUG: https://github.com/OData/WebApi/issues/1837
                     // routeBuilder.SetDefaultODataOptions( new ODataOptions() { UrlKeyDelimiter = Parentheses } );
                     routeBuilder.ServiceProvider.GetRequiredService<ODataOptions>().UrlKeyDelimiter = Parentheses;
-
-                    // global odata query options
                     routeBuilder.Count();
-
                     routeBuilder.MapVersionedODataRoutes("odata", "api", modelBuilder.GetEdmModels());
                 });
             app.UseSwagger(o => o.PreSerializeFilters.Add((openApiDocument, _) =>
@@ -118,10 +104,9 @@ namespace FilterLists.Api
             app.UseSwaggerUI(
                 options =>
                 {
-                    // build a swagger endpoint for each discovered API version
                     foreach (var description in provider.ApiVersionDescriptions)
                         options.SwaggerEndpoint($"{description.GroupName}/swagger.json",
-                            description.GroupName.ToUpperInvariant());
+                            $"FilterLists API {description.GroupName}");
                 });
         }
     }

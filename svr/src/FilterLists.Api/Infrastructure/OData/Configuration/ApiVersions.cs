@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace FilterLists.Api.Configuration
+namespace FilterLists.Api.Infrastructure.OData.Configuration
 {
     internal static class ApiVersions
     {

@@ -2,7 +2,7 @@
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FilterLists.Api.Configuration
+namespace FilterLists.Api.Infrastructure.OData.Configuration
 {
     /// <summary>
     ///     Represents the model configuration for orders.

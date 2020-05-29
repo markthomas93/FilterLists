@@ -5,7 +5,7 @@ using Microsoft.AspNet.OData.Query;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FilterLists.Api.V1
+namespace FilterLists.Api.Controllers.V1
 {
     using static StatusCodes;
 

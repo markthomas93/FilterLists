@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OData;
 
-namespace FilterLists.Api.V2
+namespace FilterLists.Api.Controllers.V2
 {
     using static AllowedQueryOptions;
     using static StatusCodes;

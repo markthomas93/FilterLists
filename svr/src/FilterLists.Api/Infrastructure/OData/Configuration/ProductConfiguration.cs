@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNet.OData.Builder;
+﻿using FilterLists.Api.Models;
+using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FilterLists.Api.Configuration
+namespace FilterLists.Api.Infrastructure.OData.Configuration
 {
     /// <summary>
-    ///     Represents the model configuration for all configurations.
+    ///     Represents the model configuration for products.
     /// </summary>
-    public class AllConfigurations : IModelConfiguration
+    public class ProductConfiguration : IModelConfiguration
     {
         /// <summary>
         ///     Applies model configurations using the provided builder for the specified API version.
@@ -15,7 +16,9 @@ namespace FilterLists.Api.Configuration
         /// <param name="apiVersion">The <see cref="ApiVersion">API version</see> associated with the <paramref name="builder" />.</param>
         public void Apply(ODataModelBuilder builder, ApiVersion apiVersion)
         {
-            builder.Function("GetSalesTaxRate").Returns<double>().Parameter<int>("PostalCode");
+            if (apiVersion < ApiVersions.V3) return;
+
+            var product = builder.EntitySet<Product>("Products").EntityType.HasKey(p => p.Id);
         }
     }
 }

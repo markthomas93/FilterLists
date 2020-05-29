@@ -43,11 +43,20 @@ namespace FilterLists.Api.Infrastructure.Swagger
         {
             var info = new OpenApiInfo
             {
-                Title = "Sample API",
-                Version = description.ApiVersion.ToString(),
-                Description = "A sample application with Swagger, Swashbuckle, and API versioning.",
-                Contact = new OpenApiContact {Name = "Bill Mei", Email = "bill.mei@somewhere.com"},
-                License = new OpenApiLicense {Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT")}
+                Title = "FilterLists API",
+                Description =
+                    "The independent, comprehensive directory of filter and host lists for advertisements, trackers, malware, and annoyances.",
+                Version = description.GroupName,
+                Contact = new OpenApiContact
+                {
+                    Name = "FilterLists",
+                    Url = new Uri("https://github.com/collinbarrett/FilterLists")
+                },
+                License = new OpenApiLicense
+                {
+                    Name = $"Released under MIT License. ©{DateTime.Now.Year} Collin M. Barrett",
+                    Url = new Uri("https://github.com/collinbarrett/FilterLists/blob/master/LICENSE")
+                }
             };
 
             if (description.IsDeprecated) info.Description += " This API version has been deprecated.";
